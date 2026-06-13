@@ -2,60 +2,163 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Cody Daniels</title>
+  <title>Cody Daniels — Computational Linguist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Personal website of Cody Daniels, a computational linguist researching language, culture, and storytelling. Graduate of BYU and University of Helsinki.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,wght@0,300..600;1,300..600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-<div class="container">
-  
-  <h1>Cody Daniels</h1>
-  
-  <p>Hello! I am a computational linguist interested in how language, culture, and storytelling help people make sense of the world. I graduated summa cum laude with a B.S. in Computer Science with minors in Linguistics, Mathematics, and Scandinavian Studies from Brigham Young University. I am currently pursuing an M.A. in Linguistic Diversity and Digital Humanities at the University of Helsinki.</p>
-  
-  <p></p>
-  
-  <h2>Projects</h2>
-  
-  <ul>
-    <li>
-      <a href="https://huggingface.co/codymd/fi-rauma">Finnish to Rauma Translator</a>
-      <span>A neural machine translator from standard written Finnish to Rauman Giäl dialect.</span>
-    </li>
-    <li>
-      <a href="https://github.com/cmdaniels/fi-lib">Finnish Library</a>
-      <span>A Python library for Finnish that conjugates verbs and declines nouns into all of their forms.</span>
-    </li>
-    <li>
-      <a href="https://github.com/cmdaniels/flashcard-gen">Flashcard Generator</a>
-      <span>A Python script for quickly generating fully-featured flashcards in any language.</span>
-    </li>
-    <li>
-      <a href="https://github.com/cmdaniels/twitter-mood">Twitter Mood Light</a>
-      <span>A script that uses Twitter's REST API to gather tweets and analyze how the world is feeling.</span>
-    </li>
-    <li>
-      <a href="https://codepen.io/cmdaniels/full/wGYmBm/">Conway's Game of Life</a>
-      <span>John Horton Conway's classic cellular automaton game recreated using React.</span>
-    </li>
-  </ul>
-  
-  <h2>Links</h2>
-  
-  <ul>
-    <li>
-      <a href="https://codepen.io/cmdaniels">CodePen</a>
-      <span>A portfolio of some of my random web work.</span>
-    </li>
-    <li>
-      <a href="https://github.com/cmdaniels">GitHub</a>
-      <span>A portfolio of some of my larger projects.</span>
-    </li>
-  </ul>
-  
+<div class="site-wrapper">
+  <header class="site-header">
+    <div class="header-container">
+      <div class="title-area">
+        <h1>Cody Daniels</h1>
+        <p class="subtitle">Computational Linguist</p>
+      </div>
+      <nav class="nav-links">
+        <a href="https://github.com/cmdaniels" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://codepen.io/cmdaniels" target="_blank" rel="noopener">CodePen ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-content">
+    <section class="bio-section">
+      <div class="bio-text">
+        <p class="lead-in">Hello! I am a computational linguist interested in how language, culture, and storytelling help people make sense of the world.</p>
+        <p>I graduated <em>summa cum laude</em> with a B.S. in Computer Science with minors in Linguistics, Mathematics, and Scandinavian Studies from Brigham Young University. I am currently pursuing an M.A. in Linguistic Diversity and Digital Humanities at the University of Helsinki.</p>
+      </div>
+      <div class="bio-meta">
+        <div class="meta-item">
+          <span class="meta-label">Current Focus</span>
+          <span class="meta-value">M.A. Linguistic Diversity &amp; Digital Humanities</span>
+          <span class="meta-institution">University of Helsinki</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Background</span>
+          <span class="meta-value">B.S. Computer Science (Minors: Ling, Math, Scand)</span>
+          <span class="meta-institution">Brigham Young University</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-section">
+      <div class="section-header">
+        <h2>Selected Projects</h2>
+        <span class="section-line"></span>
+      </div>
+      
+       <div class="projects-grid">
+        <article class="project-card">
+          <img src="./images/unsplash/alex-inkilainen-OfZNe7YpCvA-unsplash.jpg" alt="Finnish landscape with lake and pine forest" class="project-image">
+          <div class="project-card-header">
+            <h3>Finnish to Rauma Translator</h3>
+          </div>
+          <div class="project-card-body">
+            <p class="project-description">A neural machine translator from standard written Finnish to Rauman Giäl dialect, preserving local idioms.</p>
+            <div class="project-tags">
+              <span class="tag">Machine Translation</span>
+              <span class="tag">NLP</span>
+            </div>
+            <a href="https://huggingface.co/codymd/fi-rauma" target="_blank" rel="noopener" class="project-card-link">View Project ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="./images/unsplash/tapio-haaja-I9SWvZ9sO2U-unsplash.jpg" alt="Helsinki yellow and green city tram" class="project-image">
+          <div class="project-card-header">
+            <h3>Finnish Library</h3>
+          </div>
+          <div class="project-card-body">
+            <p class="project-description">A Python library for Finnish morphology that conjugates verbs and declines nouns into all forms.</p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Morphology</span>
+            </div>
+            <a href="https://github.com/cmdaniels/fi-lib" target="_blank" rel="noopener" class="project-card-link">View Project ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="./images/unsplash/kyle-glenn-SrASYZZpyjw-unsplash.jpg" alt="Green leafed pine forest" class="project-image">
+          <div class="project-card-header">
+            <h3>Flashcard Generator</h3>
+          </div>
+          <div class="project-card-body">
+            <p class="project-description">A Python script for generating structured, customizable spaced-repetition flashcards in any language.</p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Anki</span>
+            </div>
+            <a href="https://github.com/cmdaniels/flashcard-gen" target="_blank" rel="noopener" class="project-card-link">View Project ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="./images/unsplash/tapio-haaja-cJK3d95lPiM-unsplash.jpg" alt="Gray rocks on seashore in Helsinki during sunset" class="project-image">
+          <div class="project-card-header">
+            <h3>Twitter Mood Light</h3>
+          </div>
+          <div class="project-card-body">
+            <p class="project-description">A sentiment analysis script that analyzes Twitter API streams to generate real-time visual summaries of public emotional states.</p>
+            <div class="project-tags">
+              <span class="tag">APIs</span>
+              <span class="tag">Data Mining</span>
+            </div>
+            <a href="https://github.com/cmdaniels/twitter-mood" target="_blank" rel="noopener" class="project-card-link">View Project ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="./images/unsplash/alexandr-bormotin-w6KSwwnQyaE-unsplash.jpg" alt="Abstract high-tech geometric tunnel grid" class="project-image">
+          <div class="project-card-header">
+            <h3>Conway's Game of Life</h3>
+          </div>
+          <div class="project-card-body">
+            <p class="project-description">An interactive simulation of John Horton Conway's cellular automaton, implemented in React with custom rule support.</p>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">Interactivity</span>
+            </div>
+            <a href="https://codepen.io/cmdaniels/full/wGYmBm/" target="_blank" rel="noopener" class="project-card-link">View Project ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="links-section">
+      <div class="section-header">
+        <h2>Academic Portfolios</h2>
+        <span class="section-line"></span>
+      </div>
+      <div class="links-grid">
+        <a href="https://github.com/cmdaniels" class="portfolio-link" target="_blank" rel="noopener">
+          <div class="portfolio-link-header">
+            <div class="link-title">GitHub Portfolio</div>
+            <span class="link-arrow">↗</span>
+          </div>
+          <p class="link-desc">Complete source code repositories, NLP utilities, and academic linguistics libraries.</p>
+        </a>
+        <a href="https://codepen.io/cmdaniels" class="portfolio-link" target="_blank" rel="noopener">
+          <div class="portfolio-link-header">
+            <div class="link-title">CodePen Sandbox</div>
+            <span class="link-arrow">↗</span>
+          </div>
+          <p class="link-desc">Small interactive front-end layouts, animations, and quick UI prototypes.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Cody Daniels. Designed with an academic flat aesthetic.</p>
+  </footer>
 </div>
-  
+
 </body>
 </html>
