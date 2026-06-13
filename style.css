@@ -17,6 +17,12 @@
   /* Deep academic burnt orange / rust ink */
   --accent-light: #f7ebd3;
   /* Soft warm orange-cream wash for tags */
+  --tag-border: rgba(145, 59, 25, 0.15);
+  /* Accent-based tag border */
+  --project-overlay-text: #f8f2e3;
+  /* Light cream text for project overlays */
+  --project-link-hover: var(--accent-light);
+  /* Link hover color in project overlay */
 
   --font-serif: "EB Garamond", Georgia, serif;
   --font-body: Georgia, serif;
@@ -27,6 +33,46 @@
   /* Flat, sharp library cards */
   --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+[data-theme="dark"] {
+  --bg-color: #1c1a17;
+  /* Warm charcoal ink / dark tea */
+  --bg-hover: #262420;
+  /* Slightly lighter warm charcoal */
+  --text-color: #f5ede0;
+  /* Warm paper cream */
+  --text-muted: #9e9482;
+  /* Muted warm sepia grey */
+  --border-color: #f5ede0;
+  /* Paper cream border */
+  --accent-color: #d65d30;
+  /* Bright academic terracotta/rust orange */
+  --accent-light: #2e231d;
+  /* Dark warm rust-orange wash for tags */
+  --tag-border: rgba(214, 93, 48, 0.25);
+  /* Accent-based tag border in dark mode */
+  --project-overlay-text: #f5ede0;
+  /* Light cream text for dark mode */
+  --project-link-hover: var(--accent-color);
+  /* Link hover color in dark mode */
+}
+
+/* Smooth theme transition */
+body,
+.profile-card,
+.project-card,
+.section-line,
+.cv-section h2,
+.cv-sidebar-block,
+.cv-sidebar-block h3 {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] img,
+[data-theme="dark"] .project-image {
+  filter: brightness(0.85) contrast(1.05);
+}
+
 
 * {
   box-sizing: border-box;
@@ -255,7 +301,7 @@ em {
   padding: 3px 8px;
   background-color: var(--accent-light);
   color: var(--accent-color);
-  border: 1px solid rgba(145, 59, 25, 0.15);
+  border: 1px solid var(--tag-border);
 }
 
 .profile-links {
@@ -447,7 +493,7 @@ em {
 }
 
 .project-card:hover .project-card-header h3 {
-  color: var(--bg-color);
+  color: var(--project-overlay-text);
 }
 
 .project-card-body {
@@ -493,7 +539,7 @@ em {
 .project-description {
   font-size: 1rem;
   line-height: 1.5;
-  color: var(--bg-color);
+  color: var(--project-overlay-text);
   margin-bottom: 16px;
 }
 
@@ -512,8 +558,8 @@ em {
   letter-spacing: 0.05em;
   padding: 2px 6px;
   background-color: transparent;
-  border: 1px solid var(--bg-color);
-  color: var(--bg-color);
+  border: 1px solid var(--project-overlay-text);
+  color: var(--project-overlay-text);
 }
 
 .project-card-link {
@@ -522,16 +568,16 @@ em {
   font-weight: 650;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--bg-color);
+  color: var(--project-overlay-text);
   text-decoration: none;
-  border-bottom: 1.5px solid var(--bg-color);
+  border-bottom: 1.5px solid var(--project-overlay-text);
   padding-bottom: 2px;
   transition: var(--transition);
 }
 
 .project-card-link:hover {
-  color: var(--accent-light);
-  border-bottom-color: var(--accent-light);
+  color: var(--project-link-hover);
+  border-bottom-color: var(--project-link-hover);
 }
 
 /* Container query responsive scaling for small cards */
@@ -902,7 +948,7 @@ a:focus-visible,
   background-color: var(--accent-light);
   color: var(--accent-color);
   font-weight: 600;
-  border: 1px solid rgba(26, 60, 49, 0.15);
+  border: 1px solid var(--tag-border);
 }
 
 .cv-sidebar {
@@ -1004,5 +1050,93 @@ a:focus-visible,
   .cv-layout {
     grid-template-columns: 1fr;
     gap: 48px;
+  }
+}
+
+/* ==========================================
+   Theme Toggle Button Styles
+   ========================================== */
+
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--text-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-left: 8px;
+  vertical-align: middle;
+  outline: none;
+}
+
+.theme-toggle-btn:hover {
+  color: var(--accent-color);
+  background-color: var(--bg-hover);
+  transform: scale(1.08);
+}
+
+.theme-toggle-btn:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.theme-toggle-btn svg {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+
+/* Default state matches light theme (suggests transitioning to dark mode, showing moon) */
+.theme-toggle-btn .sun-icon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0);
+}
+
+.theme-toggle-btn .moon-icon {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+/* Theme-specific visibility rules */
+[data-theme="light"] .theme-toggle-btn .sun-icon {
+  opacity: 0 !important;
+  transform: rotate(90deg) scale(0) !important;
+}
+
+[data-theme="light"] .theme-toggle-btn .moon-icon {
+  opacity: 1 !important;
+  transform: rotate(0) scale(1) !important;
+}
+
+[data-theme="dark"] .theme-toggle-btn .sun-icon {
+  opacity: 1 !important;
+  transform: rotate(0) scale(1) !important;
+}
+
+[data-theme="dark"] .theme-toggle-btn .moon-icon {
+  opacity: 0 !important;
+  transform: rotate(-90deg) scale(0) !important;
+}
+
+@media (max-width: 550px) {
+  .theme-toggle-btn {
+    margin-left: 0;
+    margin-top: 4px;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .theme-toggle-btn svg {
+    width: 20px;
+    height: 20px;
   }
 }

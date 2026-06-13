@@ -3,6 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || 
+                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
   <title>Curriculum Vitae — Cody Daniels</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
