@@ -182,7 +182,7 @@ const alignedStoryData = [
         "id": "p8-b4",
         "rauma": "Ko ensmäine lehterkuarm mene haminaha huame aamust, ni mnää hyppän guarmam bääll, mene Minervaham, bistän ganuuna säkkihi ja pääsen dalomboja heosell haminast kotti jällk kanuunoinen.",
         "english": "When the first load of planks comes into the harbor tomorrow mornin’, I’ll jump on board, head down to Minerva’s lower decks, stick the cannon in a sack, and make it home again on the back of the farmer’s horse."
-      }
+      },
       {
         "id": "p8-b5",
         "rauma": "Se käy niingo äksäst vaa.",
@@ -302,12 +302,12 @@ const alignedStoryData = [
         "id": "p10-b7",
         "rauma": "Mnää ymmärsin gyll, ettei täsä ollk kysymyst vaevoist, muttko ett Vilkk pelkäs ja, niingo sanott, pelkäsi mnää, pahus soikko, ittekkin goko rustinkki.",
         "english": "Oh, I understood this wasn’t a question of being a bother. Vilkku and I both feared the blast."
-      }
+      },
       {
         "id": "p10-b8",
         "rauma": "Mutt samas silmäräpäykses mnää muistin, gui mnää oli maistraati edes saannk kehumist rohkeudestan, gon oli oli valu samottamas, sillon go engelsman Rauma haminam boltt.",
         "english": "But in that same moment I remembered standin’ in front of the city hall, gettin’ commended for my bravery for puttin’ out the fires back when the English burned Rauma harbor.{5}"
-      }
+      },
       {
         "id": "p10-b9",
         "rauma": "Ja ko mnää se muisti, ni mnää puri hammastan, graappasim bäresoito Vilkun gädest ja sohasi sillf fänkpannuhu.",
@@ -357,7 +357,7 @@ const alignedStoryData = [
         "id": "p11-b8",
         "rauma": "Mnää katosi sendän daanen ja sillo mnää näin Gringelinim bistäväm bääs ulos tyhjist akkumboogist ja mek kuulin go hän huus: “Kyll mnää teijä vaa nää, junkkri.”",
         "english": "Even so, I looked back, saw Kringelin stick his head out of the empty window frame, and heard him shout, “Yeah, I see you scoundrels!”"
-      }
+      },
       {
         "id": "p11-b9",
         "rauma": "— Em mes sendä ollk kuulevannas, kon garasim Balotondi makasiinetten daam biiloho.",
@@ -407,7 +407,7 @@ const alignedStoryData = [
         "id": "p12-b8",
         "rauma": "Ja juhlaliset täräykse ne olivakki.",
         "english": "And festive blasts they were."
-      }
+      },
       {
         "id": "p12-b9",
         "rauma": "Niin gaikk tykkäsiväk, ko olivak kuuli ne.",
