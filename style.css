@@ -191,7 +191,11 @@ em {
   line-height: 1.7;
 }
 
-.bio-meta {
+.bio-profile {
+  background-color: transparent;
+}
+
+.profile-card {
   border: var(--border-width) solid var(--border-color);
   background-color: transparent;
   padding: 24px;
@@ -200,39 +204,88 @@ em {
   gap: 20px;
 }
 
-.meta-item {
+.profile-item {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.meta-item:not(:last-child) {
+.profile-item:not(:last-child) {
   border-bottom: 1px solid var(--bg-hover);
   padding-bottom: 16px;
 }
 
-.meta-label {
+.profile-label {
   font-family: var(--font-sans);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--text-muted);
-  font-weight: 600;
+  color: var(--accent-color);
+  font-weight: 700;
 }
 
-.meta-value {
+.profile-value {
   font-family: var(--font-sans);
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.95rem;
+  font-weight: 600;
   color: var(--text-color);
 }
 
-.meta-institution {
+.profile-institution {
   font-family: var(--font-sans);
   font-size: 0.85rem;
   color: var(--text-muted);
   font-style: italic;
   margin-top: 2px;
+}
+
+.profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.profile-tags span {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 3px 8px;
+  background-color: var(--accent-light);
+  color: var(--accent-color);
+  border: 1px solid rgba(145, 59, 25, 0.15);
+}
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.profile-links a {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-color);
+  text-decoration: none;
+  border-bottom: 1.5px solid transparent;
+  padding-bottom: 2px;
+  transition: var(--transition);
+}
+
+.profile-links a:hover {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+.link-separator {
+  color: var(--text-muted);
+  opacity: 0.5;
+  user-select: none;
 }
 
 /* Section Headers */
@@ -611,7 +664,7 @@ a:focus-visible,
     gap: 32px;
   }
 
-  .bio-meta {
+  .bio-profile {
     max-width: 100%;
   }
 

@@ -52,4 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
       <p>&copy; 2026 Cody Daniels</p>
     `;
   }
+
+  // 4. Email Obfuscation Helper
+  document.querySelectorAll('.email-link').forEach(link => {
+    const name = link.getAttribute('data-name');
+    const domain = link.getAttribute('data-domain');
+    const tld = link.getAttribute('data-tld');
+    if (name && domain && tld) {
+      link.setAttribute('href', `mailto:${name}@${domain}.${tld}`);
+    }
+  });
 });
