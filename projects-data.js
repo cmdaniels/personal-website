@@ -76,7 +76,7 @@ const projectsData = [
     "imageAlt": "Old wooden timber houses street in historical Rauma town",
     "description": "Literary translation of Frans Hjalmar Nortamo's short story 'Antonim bäev' from the collection <em>Raumlaissi jaarituksi</em>.",
     "tags": ["Translation", "Linguistics", "Rauma Dialect"],
-    "link": "./files/Raumlaissi jaarituksi.pdf",
+    "link": "./raumlaissi-jaarituksi.html",
     "featured": true
   },
   {

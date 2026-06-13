@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function () {
+      const theme = localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <title>Raumlaissi jaarituksi — Cody Daniels</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="An interactive translation and dialect study of Frans Hjalmar Nortamo's short story 'Antonim bäev' from the collection Raumlaissi jaarituksi.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,wght@0,300..600;1,300..600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./layout-renderer.js"></script>
+  <script defer src="./raumlaissi-jaarituksi.js"></script>
+</head>
+
+<body>
+
+  <div class="site-wrapper">
+    <header class="site-header" id="site-header" data-active="projects"></header>
+
+    <main class="site-content">
+
+      <section class="reader-intro">
+        <h2><em>Raumlaissi jaarituksi</em></h2>
+        <p>An interactive translation of Frans Hjalmar Nortamo's 1898 short story
+          “Antonim bäev”
+        </p>
+        <div class="pdf-link-container">
+          <a href="./files/Raumlaissi jaarituksi.pdf" target="_blank" rel="noopener" class="pdf-link">Original PDF ↗</a>
+        </div>
+      </section>
+
+      <section class="reader-toolbar">
+        <div class="toolbar-group">
+          <span class="toolbar-label">View Mode:</span>
+          <div class="btn-group">
+            <button class="btn-toggle active" id="btn-side" data-mode="side">Side-by-Side</button>
+            <button class="btn-toggle" id="btn-interleaved" data-mode="interleaved">Interleaved</button>
+            <button class="btn-toggle" id="btn-single" data-mode="single">Single</button>
+          </div>
+        </div>
+
+        <div class="toolbar-group" id="single-lang-selector" style="display: none;">
+          <div class="btn-group">
+            <button class="btn-toggle active" id="btn-show-rauma" data-lang="rauma">Rauma</button>
+            <button class="btn-toggle" id="btn-show-english" data-lang="english">English</button>
+          </div>
+        </div>
+
+        <div class="toolbar-group">
+          <label class="toolbar-checkbox-label">
+            <input type="checkbox" id="toggle-glossary" checked>
+            <span>Tooltips</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="reader-viewport">
+        <div class="reader-columns" id="reader-container">
+          <!-- Populated dynamically by JS -->
+        </div>
+      </section>
+
+      <section class="study-section">
+        <div class="footnotes-card">
+          <h3 class="profile-label" style="margin-bottom: 16px;">Translation &amp; Historical Notes</h3>
+          <ul class="footnotes-list" id="footnotes-list">
+            <!-- Populated dynamically by JS -->
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer" id="site-footer"></footer>
+  </div>
+
+</body>
+
+</html>
