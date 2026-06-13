@@ -7,7 +7,7 @@ const projectsData = [
     "description": "Experimented with fine-tuning and prompt engineering with linguistic data to improve machine translation for low-resource languages like Khmer and Quechua.",
     "tags": ["Machine Translation", "NLP"],
     "link": "./files/LinguistLLM.pdf",
-    "featured": true
+    "featured": false
   },
   {
     "id": "rauma-translator",
@@ -17,7 +17,7 @@ const projectsData = [
     "description": "A corpus and neural machine translator from standard written Finnish to Rauman Giäl dialect.",
     "tags": ["Machine Translation", "NLP"],
     "link": "./files/Masiingäänttär.pdf",
-    "featured": true
+    "featured": false
   },
   {
     "id": "bird-calls-cnn",
@@ -37,7 +37,7 @@ const projectsData = [
     "description": "Measured FinBERT and XLM-RoBERTa performance on Finnish case morphology, showing FinBERT achieved 90%+ accuracy for education applications.",
     "tags": ["Computational Linguistics", "BERT", "Finnish"],
     "link": "./files/Evaluating Masked Language Model Understanding of Finnish Cases.pdf",
-    "featured": true
+    "featured": false
   },
   {
     "id": "six-nimmt-ai",
@@ -47,7 +47,7 @@ const projectsData = [
     "description": "Developed a simulator environment and a Monte Carlo minimax search AI agent that consistently outperformed DQN and heuristic models.",
     "tags": ["Artificial Intelligence", "Monte Carlo", "Python"],
     "link": "./files/6 nimmt.pdf",
-    "featured": false
+    "featured": true
   },
   {
     "id": "grammar-checking-token",
@@ -87,7 +87,7 @@ const projectsData = [
     "description": "Documented the grammatical structures of Kikuyu with a native consultant.",
     "tags": ["Fieldwork", "IPA", "Morphosyntax"],
     "link": "./files/Field Notebook.pdf",
-    "featured": false
+    "featured": true
   },
   {
     "id": "bayesian-recipe-labeling",
@@ -167,7 +167,7 @@ const projectsData = [
     "description": "Literary translation of Frans Hjalmar Nortamo's short story 'Antonim bäev' from the collection <em>Raumlaissi jaarituksi</em>.",
     "tags": ["Translation", "Linguistics", "Rauma Dialect"],
     "link": "./files/Raumlaissi jaarituksi.pdf",
-    "featured": false
+    "featured": true
   },
   {
     "id": "language-study-guide",
