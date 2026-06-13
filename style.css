@@ -1183,26 +1183,6 @@ a:focus-visible,
   text-decoration: underline;
 }
 
-.reader-banner {
-  max-width: 800px;
-  margin: 32px auto 0 auto;
-  border: var(--border-width) solid var(--border-color);
-  overflow: hidden;
-}
-
-.banner-image {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .banner-image {
-    height: 220px;
-  }
-}
-
 .reader-toolbar {
   max-width: 1120px;
   margin: 0 auto 24px auto;
