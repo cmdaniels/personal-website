@@ -249,6 +249,7 @@ em {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
+  background-color: var(--text-muted);
   border-top: var(--border-width) solid var(--border-color);
 }
 
@@ -499,7 +500,8 @@ a:focus-visible,
   }
 
   .project-card {
-    border-right: var(--border-width) solid var(--border-color); /* restore defaults */
+    border-right: var(--border-width) solid var(--border-color);
+    /* restore defaults */
   }
 
   .project-card:nth-child(2n) {
@@ -509,7 +511,14 @@ a:focus-visible,
 
 @media (max-width: 600px) {
   .site-wrapper {
-    padding: 32px 16px;
+    padding: 32px 0;
+  }
+
+  .header-container,
+  .bio-section,
+  .section-header,
+  .links-grid {
+    padding-inline: 16px;
   }
 
   .header-container {
@@ -520,8 +529,7 @@ a:focus-visible,
 
   .nav-links {
     width: 100%;
-    border-top: 1px solid var(--border-color);
-    padding-top: 16px;
+    padding-top: 0;
   }
 
   h1 {
