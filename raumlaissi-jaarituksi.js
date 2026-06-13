@@ -479,7 +479,7 @@ const dialectGlossary = {
   "bittä": { fin: "pitää", eng: "to have / keep" },
   "biukka": { fin: "tiukka", eng: "tight" },
   "biäne": { fin: "pienen", eng: "little" },
-  "boikka": { fin: "poika (kova juttu)", eng: "quite a thing / beast" },
+  "boikka": { fin: "poika", eng: "quite a thing / beast" },
   "boltt": { fin: "poltti", eng: "burned" },
   "borvo": { fin: "Porvoon", eng: "Porvoo (old measurement: large amount)" },
   "bräiskäyksest": { fin: "räjähdyksestä", eng: "blast / bang" },
@@ -513,7 +513,7 @@ const dialectGlossary = {
   "dulf": { fin: "tulla", eng: "to come" },
   "duuman": { fin: "tuumani / suunnitelmani", eng: "my plan / idea" },
   "dyyreksymän": { fin: "ihmetellä / pelätä", eng: "to fear / doubt" },
-  "dyän": { fin: "työhön / luo", eng: "to my place" },
+  "dyän": { fin: "luo", eng: "to my place" },
   "dämäm": { fin: "tämän", eng: "this" },
   "dänn": { fin: "tänne", eng: "here" },
   "dännt": { fin: "tänne", eng: "here" },
@@ -809,7 +809,6 @@ const dialectGlossary = {
   "silmäs": { fin: "silmänsä", eng: "his eyes" },
   "simeli": { fin: "Simeliä", eng: "Simeli's" },
   "sinnp": { fin: "sinne", eng: "in there" },
-  "sinä": { fin: "sinä", eng: "that" },
   "siälls": { fin: "siellä", eng: "there" },
   "siäppas": { fin: "sieppasi", eng: "snatched" },
   "snuu": { fin: "sinun", eng: "your" },
@@ -937,30 +936,77 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-
   // Wrap glossary words in Rauma text
   function wrapGlossaryWords(text) {
     if (!glossaryEnabled) return text;
-    // Split by words and whitespace, keeping them as separate tokens
-    return text.split(/(\s+)/).map(token => {
-      // Strip trailing punctuation like period, comma, question, quotes
-      const match = token.match(/^([a-zA-ZäöÄÖ“”—-]+)(.*)$/);
-      if (match) {
-        const word = match[1];
-        const rest = match[2];
-        const lowerWord = word.toLowerCase();
 
-        // Strip leading dialogue dashes if any for lookup
-        const cleanWord = word.replace(/^[—-]*/, '');
-        const cleanLower = cleanWord.toLowerCase();
+    // Cache sorted keys by number of words descending
+    if (!wrapGlossaryWords.sortedKeys) {
+      wrapGlossaryWords.sortedKeys = Object.keys(dialectGlossary).sort((a, b) => {
+        return b.split(' ').length - a.split(' ').length;
+      });
+    }
 
-        const gloss = dialectGlossary[cleanWord] || dialectGlossary[cleanLower];
-        if (gloss) {
-          return `<span class="gloss-word" tabindex="0" data-fin="${gloss.fin}" data-eng="${gloss.eng}">${word}</span>${rest}`;
+    const tokens = text.split(/([a-zA-ZäöÄÖüÅåÜ-–]+)/);
+    const result = [];
+    let i = 0;
+
+    while (i < tokens.length) {
+      if (i % 2 === 0) {
+        // Non-word token
+        result.push(tokens[i]);
+        i++;
+        continue;
+      }
+
+      let matchedKey = null;
+      let matchedWordCount = 0;
+
+      for (const key of wrapGlossaryWords.sortedKeys) {
+        const keyWords = key.split(' ');
+        const numWords = keyWords.length;
+
+        // Check if we have enough tokens remaining to match this key
+        if (i + 2 * (numWords - 1) < tokens.length) {
+          let isMatch = true;
+          for (let wIdx = 0; wIdx < numWords; wIdx++) {
+            // Check word match
+            const tokenWord = tokens[i + 2 * wIdx];
+            if (!tokenWord || tokenWord.toLowerCase() !== keyWords[wIdx]) {
+              isMatch = false;
+              break;
+            }
+            // Check spacing in between
+            if (wIdx < numWords - 1) {
+              const tokenSpace = tokens[i + 2 * wIdx + 1];
+              if (!tokenSpace || !/^\s+$/.test(tokenSpace)) {
+                isMatch = false;
+                break;
+              }
+            }
+          }
+
+          if (isMatch) {
+            matchedKey = key;
+            matchedWordCount = numWords;
+            break;
+          }
         }
       }
-      return token;
-    }).join('');
+
+      if (matchedKey) {
+        const gloss = dialectGlossary[matchedKey];
+        const spanLength = 2 * matchedWordCount - 1;
+        const matchedText = tokens.slice(i, i + spanLength).join('');
+        result.push(`<span class="gloss-word" tabindex="0" data-fin="${gloss.fin}" data-eng="${gloss.eng}">${matchedText}</span>`);
+        i += spanLength;
+      } else {
+        result.push(tokens[i]);
+        i++;
+      }
+    }
+
+    return result.join('');
   }
 
   // Format English footnotes references like (1) or (2) in text
