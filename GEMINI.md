@@ -1,0 +1,1 @@
+Never perform browser-in-the-loop validation or spin up Chrome for testing unless explicitly requested in the prompt. If code verification is needed, rely strictly on terminal unit testing.
