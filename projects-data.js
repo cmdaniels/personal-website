@@ -47,7 +47,7 @@ const projectsData = [
     "description": "Developed a simulator environment and a Monte Carlo minimax search AI agent that consistently outperformed DQN and heuristic models.",
     "tags": ["Artificial Intelligence", "Monte Carlo", "Python"],
     "link": "./files/6 nimmt.pdf",
-    "featured": true
+    "featured": false
   },
   {
     "id": "grammar-checking-token",
@@ -57,7 +57,7 @@ const projectsData = [
     "description": "Fine-tuned BERT, XLNet, and ALBERT to perform grammar checking as a token classification task, deploying the best model via Flask and Redis.",
     "tags": ["NLP", "Text Classification", "Flask"],
     "link": "./files/Grammar_Checking_as_a_Token_Classification_Task.pdf",
-    "featured": true
+    "featured": false
   },
   {
     "id": "comet-mt-eval",
@@ -67,7 +67,7 @@ const projectsData = [
     "description": "Fine-tuned COMET models to support quality evaluation for low-resource languages (Haitian Creole, Kiribati, Marshallese, and Navajo).",
     "tags": ["Machine Translation", "COMET", "NLP"],
     "link": "./files/Adapting_COMET_for_LRLs.pdf",
-    "featured": true
+    "featured": false
   },
   {
     "id": "finnish-rauma-fst",
@@ -77,7 +77,7 @@ const projectsData = [
     "description": "A finite-state transducer built with XFST rules that transforms standard Finnish surface forms into the Rauma dialect.",
     "tags": ["Computational Linguistics", "FST", "Machine Translation"],
     "link": "./files/Finnish2RaumaFST.pdf",
-    "featured": true
+    "featured": false
   },
   {
     "id": "kikuyu-fieldwork",

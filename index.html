@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <script>
-    (function() {
-      const theme = localStorage.getItem('theme') || 
-                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    (function () {
+      const theme = localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
@@ -79,7 +79,7 @@
 
       <section class="projects-section">
         <div class="section-header">
-          <h2>Selected Projects</h2>
+          <h2>Featured Projects</h2>
           <span class="section-line"></span>
         </div>
 
