@@ -323,6 +323,7 @@ em {
   border-bottom: var(--border-width) solid var(--border-color);
   border-right: var(--border-width) solid var(--border-color);
   background-color: var(--bg-color);
+  container-type: inline-size;
 }
 
 /* Remove outer right border on desktop (4 columns) */
@@ -451,6 +452,7 @@ em {
 
 .project-card-body {
   position: absolute;
+  top: 80px;
   bottom: 24px;
   left: 24px;
   right: 24px;
@@ -461,6 +463,26 @@ em {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(248, 242, 227, 0.3) transparent;
+}
+
+.project-card-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.project-card-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.project-card-body::-webkit-scrollbar-thumb {
+  background: rgba(248, 242, 227, 0.3);
+  border-radius: 2px;
+}
+
+.project-card-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(248, 242, 227, 0.5);
 }
 
 .project-card:hover .project-card-body {
@@ -510,6 +532,45 @@ em {
 .project-card-link:hover {
   color: var(--accent-light);
   border-bottom-color: var(--accent-light);
+}
+
+/* Container query responsive scaling for small cards */
+@container (max-width: 320px) {
+  .project-card-header h3 {
+    font-size: 1.05rem !important;
+  }
+  .project-description {
+    font-size: 0.85rem !important;
+    margin-bottom: 8px !important;
+  }
+  .project-tags {
+    margin-bottom: 8px !important;
+    gap: 4px !important;
+  }
+  .tag {
+    font-size: 0.6rem !important;
+    padding: 1px 4px !important;
+  }
+  .project-card:hover .project-card-header {
+    top: 16px !important;
+    left: 16px !important;
+    width: calc(100% - 32px) !important;
+  }
+  .project-card-body {
+    top: 60px !important;
+    bottom: 16px !important;
+    left: 16px !important;
+    right: 16px !important;
+  }
+}
+
+@container (max-width: 250px) {
+  .project-card-header h3 {
+    font-size: 0.95rem !important;
+  }
+  .project-description {
+    font-size: 0.8rem !important;
+  }
 }
 
 /* Call to Action Container */
