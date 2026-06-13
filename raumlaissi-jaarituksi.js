@@ -131,7 +131,7 @@ const alignedStoryData = [
       {
         "id": "p6-b1",
         "rauma": "— Engöst mahdais sendä herät? Mutt Herra nimes, milläst mes sitt ammu, josei pyssyill?",
-        "english": "“Then what’ll we shoot with?” I wondered."
+        "english": "Then what’ll we shoot with if not a gun?” I wondered."
       }
     ]
   },
@@ -140,23 +140,23 @@ const alignedStoryData = [
     "blocks": [
       {
         "id": "p7-b1",
-        "rauma": "— Mill me ammu?",
-        "english": "“With a cannon, of course!"
+        "rauma": "— Mill me ammu? — Kanuunallt tiätyste;",
+        "english": "“What will we shoot with? With a cannon, of course!"
       },
       {
         "id": "p7-b2",
-        "rauma": "— Kanuunallt tiätyste;",
-        "english": "That way we won’t need any Iiros,"
+        "rauma": "eik siint tarvita Iiroj eik Aaroj; mes saa sen gahden doime valla hyvi.",
+        "english": "That way we won’t need any Iiros, and it’ll all just work."
       },
       {
         "id": "p7-b3",
-        "rauma": "eik siint tarvita Iiroj eik Aaroj;",
-        "english": "and it’ll all just work."
+        "rauma": "Snää laita Minervan ganuuna huameltta aikasin dänn ja ko mnää se lada, ni mnää takka, ett se käy kolmest pyssyst ja ussemastakkin, go se lauasta.",
+        "english": "You bring Minerva’s{3} cannon here at the crack of dawn, and when I load it, I guarantee it’ll be louder than three guns’ blasts or even more when it goes off."
       },
       {
         "id": "p7-b4",
-        "rauma": "mes saa sen gahden doime valla hyvi. Snää laita Minervan ganuuna huameltta aikasin dänn ja ko mnää se lada, ni mnää takka, ett se käy kolmest pyssyst ja ussemastakkin, go se lauasta. Tiädäks se om boikka se Minervan ganuun; mnää ole sill ennengi jyräytell.",
-        "english": "You bring Minerva’s{3} cannon here at the crack of dawn, and when I load it, I guarantee it’ll be louder than three guns’ blasts or even more when it goes off. You know that Minerva’s cannon’s a beast—I’ve shot with him before.”"
+        "rauma": "Tiädäks se om boikka se Minervan ganuun; mnää ole sill ennengi jyräytell.",
+        "english": "You know that Minerva’s cannon’s a beast—I’ve shot with him before.”"
       }
     ]
   },
@@ -180,8 +180,13 @@ const alignedStoryData = [
       },
       {
         "id": "p8-b4",
-        "rauma": "Ko ensmäine lehterkuarm mene haminaha huame aamust, ni mnää hyppän guarmam bääll, mene Minervaham, bistän ganuuna säkkihi ja pääsen dalomboja heosell haminast kotti jällk kanuunoinen. Se käy niingo äksäst vaa.",
-        "english": "When the first load of planks comes into the harbor tomorrow mornin’, I’ll jump on board, head down to Minerva’s lower decks, stick the cannon in a sack, and make it home again on the back of the farmer’s horse. It’ll be just like I’ve done it before.”"
+        "rauma": "Ko ensmäine lehterkuarm mene haminaha huame aamust, ni mnää hyppän guarmam bääll, mene Minervaham, bistän ganuuna säkkihi ja pääsen dalomboja heosell haminast kotti jällk kanuunoinen.",
+        "english": "When the first load of planks comes into the harbor tomorrow mornin’, I’ll jump on board, head down to Minerva’s lower decks, stick the cannon in a sack, and make it home again on the back of the farmer’s horse."
+      }
+      {
+        "id": "p8-b5",
+        "rauma": "Se käy niingo äksäst vaa.",
+        "english": "It’ll be just like I’ve done it before.”"
       }
     ]
   },
@@ -285,18 +290,28 @@ const alignedStoryData = [
       },
       {
         "id": "p10-b5",
-        "rauma": "Eng mnää tahdk kiälttä, ett mnää hiukam belkäsingi stää kanuunam bahust ja siirsingi ittiän vähitelle ovem bualehem biika seljän daa.",
+        "rauma": "Eng mnää tahdk kiälttä, ett mnää hiukam belkäsingi stää kanuunam bahust ja siirsingi ittiän vähitelle ovem bualehem biika seljän daa. Mutt em mnää siälls saannk kaua seisso.",
         "english": "And I won’t deny I was a little afraid of the cannon blast. I snuck gradually behind the servant girl, but I didn’t stand there long."
       },
       {
         "id": "p10-b6",
-        "rauma": "Mutt em mnää siälls saannk kaua seisso. Vilkk ott pärehe valu, tul mnuun dyän ja sanos: “Jaaha, Kalkke, snää joudak kyll nähds sem biäne vaeva, ettäs laukaset tuan, go mnää ole se ladinkkin doimittan.” Mnää ymmärsin gyll, ettei täsä ollk kysymyst vaevoist, muttko ett Vilkk pelkäs ja, niingo sanott, pelkäsi mnää, pahus soikko, ittekkin goko rustinkki.",
-        "english": "Vilkku ignited a wooden shaving, came over to me, and said: “Hey, Kalkke, I hope it’s not a bother, but you’re gonna have to fire that there cannon, since I loaded it up.” Oh, I understood this wasn’t a question of being a bother. Vilkku and I both feared the blast."
+        "rauma": "Vilkk ott pärehe valu, tul mnuun dyän ja sanos: “Jaaha, Kalkke, snää joudak kyll nähds sem biäne vaeva, ettäs laukaset tuan, go mnää ole se ladinkkin doimittan.”",
+        "english": "Vilkku ignited a wooden shaving, came over to me, and said: “Hey, Kalkke, I hope it’s not a bother, but you’re gonna have to fire that there cannon, since I loaded it up.”"
       },
       {
         "id": "p10-b7",
-        "rauma": "Mutt samas silmäräpäykses mnää muistin, gui mnää oli maistraati edes saannk kehumist rohkeudestan, gon oli oli valu samottamas, sillon go engelsman Rauma haminam boltt. Ja ko mnää se muisti, ni mnää puri hammastan, graappasim bäresoito Vilkun gädest ja sohasi sillf fänkpannuhu.",
-        "english": "But in that same moment I remembered standin’ in front of the city hall, gettin’ commended for my bravery for puttin’ out the fires back when the English burned Rauma harbor.{5} And when I remembered that, I grit my teeth, grabbed the lit shaving from Vilkku’s hand, and stuck it in the flash pan."
+        "rauma": "Mnää ymmärsin gyll, ettei täsä ollk kysymyst vaevoist, muttko ett Vilkk pelkäs ja, niingo sanott, pelkäsi mnää, pahus soikko, ittekkin goko rustinkki.",
+        "english": "Oh, I understood this wasn’t a question of being a bother. Vilkku and I both feared the blast."
+      }
+      {
+        "id": "p10-b8",
+        "rauma": "Mutt samas silmäräpäykses mnää muistin, gui mnää oli maistraati edes saannk kehumist rohkeudestan, gon oli oli valu samottamas, sillon go engelsman Rauma haminam boltt.",
+        "english": "But in that same moment I remembered standin’ in front of the city hall, gettin’ commended for my bravery for puttin’ out the fires back when the English burned Rauma harbor.{5}"
+      }
+      {
+        "id": "p10-b9",
+        "rauma": "Ja ko mnää se muisti, ni mnää puri hammastan, graappasim bäresoito Vilkun gädest ja sohasi sillf fänkpannuhu.",
+        "english": "And when I remembered that, I grit my teeth, grabbed the lit shaving from Vilkku’s hand, and stuck it in the flash pan."
       }
     ]
   },
@@ -340,8 +355,13 @@ const alignedStoryData = [
       },
       {
         "id": "p11-b8",
-        "rauma": "Mnää katosi sendän daanen ja sillo mnää näin Gringelinim bistäväm bääs ulos tyhjist akkumboogist ja mek kuulin go hän huus: “Kyll mnää teijä vaa nää, junkkri.” — Em mes sendä ollk kuulevannas, kon garasim Balotondi makasiinetten daam biiloho.",
-        "english": "Even so, I looked back, saw Kringelin stick his head out of the empty window frame, and heard him shout, “Yeah, I see you scoundrels!” I’d barely heard him when we’d fled behind the Palotonti{6} storehouses to hide."
+        "rauma": "Mnää katosi sendän daanen ja sillo mnää näin Gringelinim bistäväm bääs ulos tyhjist akkumboogist ja mek kuulin go hän huus: “Kyll mnää teijä vaa nää, junkkri.”",
+        "english": "Even so, I looked back, saw Kringelin stick his head out of the empty window frame, and heard him shout, “Yeah, I see you scoundrels!”"
+      }
+      {
+        "id": "p11-b9",
+        "rauma": "— Em mes sendä ollk kuulevannas, kon garasim Balotondi makasiinetten daam biiloho.",
+        "english": "I’d barely heard him when we’d fled behind the Palotonti{6} storehouses to hide."
       }
     ]
   },
@@ -385,8 +405,13 @@ const alignedStoryData = [
       },
       {
         "id": "p12-b8",
-        "rauma": "Ja juhlaliset täräykse ne olivakki. Niin gaikk tykkäsiväk, ko olivak kuuli ne.",
-        "english": "And festive blasts they were. That’s what everyone who heard them said."
+        "rauma": "Ja juhlaliset täräykse ne olivakki.",
+        "english": "And festive blasts they were."
+      }
+      {
+        "id": "p12-b9",
+        "rauma": "Niin gaikk tykkäsiväk, ko olivak kuuli ne.",
+        "english": "That’s what everyone who heard them said."
       }
     ]
   },
