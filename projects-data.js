@@ -48,5 +48,5 @@ const projectsData = [
     "tags": ["React", "Interactivity"],
     "link": "https://codepen.io/cmdaniels/full/wGYmBm/",
     "featured": true
-  }
+  },
 ];

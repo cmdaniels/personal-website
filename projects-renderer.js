@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
     ? projectsData.filter(p => p.featured)
     : projectsData;
 
+  if (filteredProjects.length === 3) {
+    grid.classList.add('cols-3');
+  } else {
+    grid.classList.remove('cols-3');
+  }
+
   grid.innerHTML = filteredProjects.map(project => `
     <article class="project-card">
       <img src="${project.image}" alt="${project.imageAlt}" class="project-image">
