@@ -129,4 +129,104 @@ const projectsData = [
     "link": "https://github.com/cmdaniels/fi-lib",
     "featured": false
   },
+  {
+    "id": "bayesian-recipe-labeling",
+    "title": "Automated Recipe Labeling Using A Bayesian Model",
+    "image": "./images/unsplash/tapio-haaja-I9SWvZ9sO2U-unsplash.jpg",
+    "imageAlt": "Ingredients and data modeling visualization",
+    "description": "This project aims to provide automated classification for recipes based on ingredient lists using a naïve Bayesian estimator, achieving about 70% accuracy in predicting food genres.",
+    "tags": ["Machine Learning", "Naïve Bayes", "Python"],
+    "link": "./files/BayesianRecipeLabeling.pdf",
+    "featured": false
+  },
+  {
+    "id": "canadian-language-policy",
+    "title": "A Critical Review of Canadian Language Education Policy",
+    "image": "./images/unsplash/tapio-haaja-I9SWvZ9sO2U-unsplash.jpg",
+    "imageAlt": "Canadian flag and educational materials",
+    "description": "A critical analysis of Canada's language education policies, examining how the nation's bilingual framework simplifies its multilingual reality and perpetuates colonial biases against Indigenous and heritage languages.",
+    "tags": ["Language Policy", "Education", "Sociolinguistics"],
+    "link": "./files/CanadianLanguageEduPolicy.pdf",
+    "featured": false
+  },
+  {
+    "id": "demonym-affix-productivity",
+    "title": "Demonym Affix Productivity and Conditioning",
+    "image": "./images/unsplash/tapio-haaja-I9SWvZ9sO2U-unsplash.jpg",
+    "imageAlt": "World map overlaid with statistical bar charts",
+    "description": "A survey-based study attempting to measure the productivity of six common demonym affixes, exploring how geographic location, etymological origin, and phonological constraints affect affix selection.",
+    "tags": ["Morphology", "Linguistics", "Data Analysis"],
+    "link": "./files/DemonymAffixProductivity.pdf",
+    "featured": false
+  },
+  {
+    "id": "fshs-design-study",
+    "title": "FSHS Onboarding Questionnaire Design Study",
+    "image": "./images/unsplash/tapio-haaja-I9SWvZ9sO2U-unsplash.jpg",
+    "imageAlt": "Low-fidelity and medium-fidelity UI wireframe sketches",
+    "description": "A human-computer interaction study detailing multiple design iterations, wireframes, and user testing for an efficient online patient onboarding questionnaire for the Finnish Student Health Service.",
+    "tags": ["HCI", "UX Design", "Wireframing"],
+    "link": "./files/FSHSDesignStudy.pdf",
+    "featured": false
+  },
+  {
+    "id": "finnish-rauma-fst",
+    "title": "Finnish to Rauma Finite-state Transducer (FST)",
+    "image": "./images/unsplash/tapio-haaja-I9SWvZ9sO2U-unsplash.jpg",
+    "imageAlt": "Code editor showing XFST rules and generated morphological tags",
+    "description": "The development of a finite-state transducer built with XFST rules that transforms standard Finnish surface forms into the Rauma dialect, intended for potential use in neural machine translation data augmentation.",
+    "tags": ["Computational Linguistics", "FST", "Machine Translation"],
+    "link": "./files/Finnish2RaumaFST.pdf",
+    "featured": false
+  },
+  {
+    "id": "linguist-llm",
+    "title": "LinguistLLM Project",
+    "image": "./images/unsplash/tapio-haaja-I9SWvZ9sO2U-unsplash.jpg",
+    "imageAlt": "Neural network graphic connecting languages",
+    "description": "Joint research exploring the use of prompt engineering with linguistic data augmentation and finetuning on LLAMA models to improve machine translation for low-resource languages like Khmer and Quechua.",
+    "tags": ["LLM", "Machine Translation", "NLP"],
+    "link": "./files/LinguistLLM.pdf",
+    "featured": false
+  },
+  {
+    "id": "morph-typology-baltic-tocharian",
+    "title": "Morphological Typology of Baltic and Tocharian",
+    "image": "./images/unsplash/tapio-haaja-I9SWvZ9sO2U-unsplash.jpg",
+    "imageAlt": "Ancient linguistic manuscripts and morphological trees",
+    "description": "An exploration of the morphological typology of the Baltic and Tocharian branches of Proto-Indo-European, contrasting Lithuanian's preserved fusional case system with Tocharian's agglutinative developments possibly sparked by language contact.",
+    "tags": ["Morphology", "Historical Linguistics", "Indo-European"],
+    "link": "./files/MorphTypologyBalticTocharian.pdf",
+    "featured": false
+  },
+  {
+    "id": "old-french-case-system",
+    "title": "Loss of Two-case System in Old French",
+    "image": "./images/unsplash/tapio-haaja-I9SWvZ9sO2U-unsplash.jpg",
+    "imageAlt": "Medieval French text illuminated manuscript",
+    "description": "An analysis investigating the collapse of the Old French two-case morphological system, attributing its decline to internal irregularity, sound changes like apocope, and a syntactic shift towards a strict SVO word order.",
+    "tags": ["Historical Linguistics", "Syntax", "Old French"],
+    "link": "./files/OldFrenchCaseSystem.pdf",
+    "featured": false
+  },
+  {
+    "id": "post-date-text",
+    "title": "The Post-Date Text",
+    "image": "./images/unsplash/tapio-haaja-I9SWvZ9sO2U-unsplash.jpg",
+    "imageAlt": "Smartphone displaying chat bubbles",
+    "description": "A sociolinguistic study analyzing post-date text messages to determine common communicative elements, signs of affection, and how certain gender-specific digital expressions signal romantic interest in future dating.",
+    "tags": ["Sociolinguistics", "Computer-Mediated Communication", "Pragmatics"],
+    "link": "./files/PostDateText.pdf",
+    "featured": false
+  },
+  {
+    "id": "udmurt-lexical-development",
+    "title": "Language Policy's Impact on Udmurt Lexical Development",
+    "image": "./images/unsplash/tapio-haaja-I9SWvZ9sO2U-unsplash.jpg",
+    "imageAlt": "Map of the Uralic language regions in Russia",
+    "description": "An examination of how shifting language policies in the Soviet sphere, swinging from 1920s indigenization efforts to 1930s Russification, have deeply impacted the lexical development and status of the Udmurt language.",
+    "tags": ["Language Policy", "Sociolinguistics", "Udmurt"],
+    "link": "./files/UdmurtLexicalDev.pdf",
+    "featured": false
+  }
 ];
