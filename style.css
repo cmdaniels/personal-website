@@ -13,10 +13,10 @@
   /* Muted sepia grey */
   --border-color: #2b2925;
   /* Ink black border */
-  --accent-color: #1a3c31;
-  /* Academic deep pine green */
-  --accent-light: #e6edd9;
-  /* Soft pale green tint for tags */
+  --accent-color: #913b19;
+  /* Deep academic burnt orange / rust ink */
+  --accent-light: #f7ebd3;
+  /* Soft warm orange-cream wash for tags */
 
   --font-serif: "EB Garamond", Georgia, serif;
   --font-body: Georgia, serif;
@@ -680,5 +680,216 @@ a:focus-visible,
     grid-column: span 1 !important;
     aspect-ratio: 1 / 1 !important;
     border-right: none !important;
+  }
+}
+
+/* ==========================================
+   CV Page Styles
+   ========================================== */
+
+.cv-layout {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 64px;
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  align-items: start;
+}
+
+.cv-section {
+  margin-bottom: 48px;
+}
+
+.cv-section h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+  border-bottom: var(--border-width) solid var(--border-color);
+  padding-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-color);
+}
+
+.cv-item {
+  margin-bottom: 36px;
+}
+
+.cv-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.cv-item-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.cv-item-date {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.cv-item-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.cv-item-org {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.cv-item-loc {
+  font-style: italic;
+}
+
+.cv-bullets {
+  margin: 0 0 16px 0;
+  padding-left: 20px;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.cv-bullets li {
+  margin-bottom: 8px;
+}
+
+.cv-bullets li::marker {
+  color: var(--accent-color);
+}
+
+.cv-skills-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cv-skills-inline span {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  background-color: var(--accent-light);
+  color: var(--accent-color);
+  font-weight: 600;
+  border: 1px solid rgba(26, 60, 49, 0.15);
+}
+
+.cv-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.cv-sidebar-block {
+  border: var(--border-width) solid var(--border-color);
+  padding: 24px;
+  background-color: transparent;
+}
+
+.cv-sidebar-block h3 {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-color);
+  margin-bottom: 16px;
+  border-bottom: 1.5px solid var(--border-color);
+  padding-bottom: 8px;
+  font-weight: 700;
+}
+
+.cv-sidebar-item {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.cv-sidebar-item:last-child {
+  margin-bottom: 0;
+}
+
+.cv-sidebar-label {
+  font-weight: 650;
+  color: var(--text-color);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.cv-sidebar-value {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.strength-item {
+  margin-bottom: 12px;
+}
+
+.strength-item:last-child {
+  margin-bottom: 0;
+}
+
+.strength-name {
+  font-family: var(--font-sans);
+  font-weight: 650;
+  color: var(--text-color);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.strength-desc {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  display: block;
+}
+
+.course-category {
+  margin-bottom: 16px;
+}
+
+.course-category:last-child {
+  margin-bottom: 0;
+}
+
+.course-category-title {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-color);
+  margin-bottom: 6px;
+}
+
+.course-list-inline {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 850px) {
+  .cv-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
   }
 }
