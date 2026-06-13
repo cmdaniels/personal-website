@@ -491,7 +491,6 @@ const dialectGlossary = {
   "bäevä": { fin: "päivän", eng: "day" },
   "bäevä,": { fin: "päivän,", eng: "day" },
   "bäevä.": { fin: "päivän.", eng: "day" },
-  "bäis": { fin: "pääsisi / kävisi", eng: "would work / go" },
   "bärehe": { fin: "päreestä", eng: "pine splint / shaving" },
   "bäresoito": { fin: "päreen sytykkeen", eng: "burning shaving" },
   "bääll": { fin: "päälle", eng: "on top of" },
