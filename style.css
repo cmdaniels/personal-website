@@ -1279,6 +1279,44 @@ a:focus-visible,
   position: relative;
 }
 
+.reader-columns.side-mode {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.reader-header-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  border-bottom: var(--border-width) solid var(--border-color);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.text-column-header {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.paragraph-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.paragraph-cell {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  text-align: justify;
+  margin: 0;
+}
+
 .reader-columns.interleaved-mode {
   grid-template-columns: 1fr;
   gap: 24px;
@@ -1314,9 +1352,7 @@ a:focus-visible,
   line-height: 1.7;
   text-align: justify;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  display: block;
 }
 
 .sentence-block {
@@ -1413,7 +1449,7 @@ a:focus-visible,
   background-color: var(--bg-hover);
 }
 
-.interleaved-english {
+.interleaved-top {
   display: block;
   font-size: 1.15rem;
   line-height: 1.6;
@@ -1421,7 +1457,7 @@ a:focus-visible,
   margin-bottom: 4px;
 }
 
-.interleaved-rauma {
+.interleaved-bottom {
   display: block;
   font-size: 0.95rem;
   line-height: 1.5;
@@ -1507,5 +1543,15 @@ a:focus-visible,
   .reader-columns {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+  .reader-columns.side-mode {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .reader-header-row,
+  .paragraph-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }

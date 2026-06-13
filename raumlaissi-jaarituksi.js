@@ -131,7 +131,7 @@ const alignedStoryData = [
       {
         "id": "p6-b1",
         "rauma": "— Engöst mahdais sendä herät? Mutt Herra nimes, milläst mes sitt ammu, josei pyssyill?",
-        "english": "Then what’ll we shoot with if not a gun?” I wondered."
+        "english": "“Then what’ll we shoot with if not a gun?” I wondered."
       }
     ]
   },
@@ -981,44 +981,55 @@ document.addEventListener('DOMContentLoaded', () => {
       container.classList.add('side-mode');
 
       container.innerHTML = `
-        <div class="text-column rauma-column">
-          <h3>Rauma Dialect (Original)</h3>
-          ${alignedStoryData.map(para => `
-            <div class="paragraph-block">
+        <div class="reader-header-row">
+          <div class="text-column-header">Rauma Dialect (Original)</div>
+          <div class="text-column-header">English Translation</div>
+        </div>
+        ${alignedStoryData.map(para => `
+          <div class="paragraph-row">
+            <div class="paragraph-cell rauma-cell">
               ${para.blocks.map(block => `
                 <span class="sentence-block" data-segment-id="${block.id}" tabindex="0">
                   ${wrapGlossaryWords(block.rauma)}
                 </span>
               `).join(' ')}
             </div>
-          `).join('')}
-        </div>
-        <div class="text-column english-column">
-          <h3>English Translation</h3>
-          ${alignedStoryData.map(para => `
-            <div class="paragraph-block">
+            <div class="paragraph-cell english-cell">
               ${para.blocks.map(block => `
                 <span class="sentence-block" data-segment-id="${block.id}" tabindex="0">
                   ${formatFootnoteLinks(block.english)}
                 </span>
               `).join(' ')}
             </div>
-          `).join('')}
-        </div>
+          </div>
+        `).join('')}
       `;
     } else if (currentMode === 'interleaved') {
       container.classList.add('interleaved-mode');
 
-      container.innerHTML = alignedStoryData.map(para => `
-        <div class="paragraph-block">
-          ${para.blocks.map(block => `
-            <div class="interleaved-sentence" data-segment-id="${block.id}" tabindex="0">
-              <span class="interleaved-english">${formatFootnoteLinks(block.english)}</span>
-              <span class="interleaved-rauma">${wrapGlossaryWords(block.rauma)}</span>
-            </div>
-          `).join('')}
-        </div>
-      `).join('');
+      if (activeLang === 'rauma') {
+        container.innerHTML = alignedStoryData.map(para => `
+          <div class="paragraph-block">
+            ${para.blocks.map(block => `
+              <div class="interleaved-sentence" data-segment-id="${block.id}" tabindex="0">
+                <span class="interleaved-top">${wrapGlossaryWords(block.rauma)}</span>
+                <span class="interleaved-bottom">${formatFootnoteLinks(block.english)}</span>
+              </div>
+            `).join('')}
+          </div>
+        `).join('');
+      } else {
+        container.innerHTML = alignedStoryData.map(para => `
+          <div class="paragraph-block">
+            ${para.blocks.map(block => `
+              <div class="interleaved-sentence" data-segment-id="${block.id}" tabindex="0">
+                <span class="interleaved-top">${formatFootnoteLinks(block.english)}</span>
+                <span class="interleaved-bottom">${wrapGlossaryWords(block.rauma)}</span>
+              </div>
+            `).join('')}
+          </div>
+        `).join('');
+      }
     } else if (currentMode === 'single') {
       container.classList.add('single-mode');
 
@@ -1238,7 +1249,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnSide.classList.remove('active');
     btnInterleaved.classList.add('active');
     btnSingle.classList.remove('active');
-    singleLangSelector.style.display = 'none';
+    singleLangSelector.style.display = 'flex';
     currentMode = 'interleaved';
     renderStory();
   });
