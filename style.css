@@ -102,7 +102,6 @@ em {
 
 /* Header */
 .site-header {
-  border-bottom: var(--border-width) solid var(--border-color);
   padding-bottom: 32px;
   margin-bottom: 48px;
 }
@@ -257,12 +256,10 @@ em {
 }
 
 /* Projects Section */
-/* Projects Section */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 0;
-  background-color: var(--border-color);
   border-top: var(--border-width) solid var(--border-color);
 }
 
@@ -275,8 +272,15 @@ em {
   background-color: var(--bg-color);
 }
 
-/* Remove outer right border on desktop (3 columns) */
-.project-card:nth-child(3n) {
+/* Remove outer right border on desktop (4 columns) */
+.project-card:nth-child(4n) {
+  border-right: none;
+}
+
+/* Fill the row for the last project on projects page (5 cards) */
+.projects-grid:not([data-filter="featured"]) .project-card:last-child {
+  grid-column: span 4;
+  aspect-ratio: 4 / 1;
   border-right: none;
 }
 
@@ -502,7 +506,6 @@ em {
 /* Footer */
 .site-footer {
   margin-top: 64px;
-  border-top: var(--border-width) solid var(--border-color);
   padding: 32px 24px;
   text-align: center;
   font-family: var(--font-sans);
@@ -527,7 +530,35 @@ a:focus-visible,
    Responsive Media Queries
    ========================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .project-card {
+    border-right: var(--border-width) solid var(--border-color);
+  }
+
+  .project-card:nth-child(3n) {
+    border-right: none;
+  }
+
+  /* Homepage (4 cards): Card 4 spans Row 2 completely */
+  .projects-grid[data-filter="featured"] .project-card:last-child {
+    grid-column: span 3;
+    aspect-ratio: 3 / 1;
+    border-right: none;
+  }
+
+  /* Projects page (5 cards): Card 5 spans columns 2 and 3 of Row 2 completely */
+  .projects-grid:not([data-filter="featured"]) .project-card:last-child {
+    grid-column: span 2;
+    aspect-ratio: 2 / 1;
+    border-right: none;
+  }
+}
+
+@media (max-width: 850px) {
   .bio-section {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -543,15 +574,27 @@ a:focus-visible,
 
   .project-card {
     border-right: var(--border-width) solid var(--border-color);
-    /* restore defaults */
   }
 
   .project-card:nth-child(2n) {
     border-right: none;
   }
+
+  /* Homepage (4 cards): Card 4 is in column 2. No spanning needed. */
+  .projects-grid[data-filter="featured"] .project-card:last-child {
+    grid-column: span 1;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* Projects page (5 cards): Card 5 spans Row 3 completely */
+  .projects-grid:not([data-filter="featured"]) .project-card:last-child {
+    grid-column: span 2;
+    aspect-ratio: 2 / 1;
+    border-right: none;
+  }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 550px) {
   .site-wrapper {
     padding: 32px 0;
   }
@@ -584,5 +627,12 @@ a:focus-visible,
 
   .project-card {
     border-right: none;
+  }
+
+  /* Both pages: last card behaves like standard card in 1-column grid */
+  .project-card:last-child {
+    grid-column: span 1 !important;
+    aspect-ratio: 1 / 1 !important;
+    border-right: none !important;
   }
 }

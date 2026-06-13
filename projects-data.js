@@ -37,7 +37,7 @@ const projectsData = [
     "description": "A sentiment analysis script that analyzes Twitter API streams to generate real-time visual summaries of public emotional states.",
     "tags": ["APIs", "Data Mining"],
     "link": "https://github.com/cmdaniels/twitter-mood",
-    "featured": false
+    "featured": true
   },
   {
     "id": "conways-game-of-life",
