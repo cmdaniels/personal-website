@@ -1,10 +1,10 @@
 const projectsData = [
   {
     "id": "linguist-llm",
-    "title": "LinguistLLM Project",
+    "title": "LinguistLLM Research Project",
     "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80",
     "imageAlt": "Neural network graphic connecting languages",
-    "description": "Fine-tuned Llama and prompt engineering with linguistic data to improve machine translation for low-resource languages like Khmer and Quechua.",
+    "description": "Experimented with fine-tuning and prompt engineering with linguistic data to improve machine translation for low-resource languages like Khmer and Quechua.",
     "tags": ["Machine Translation", "NLP"],
     "link": "./files/LinguistLLM.pdf",
     "featured": true
@@ -190,8 +190,8 @@ const projectsData = [
     "featured": false
   },
   {
-    "id": "taikatalvi-aapinen",
-    "title": "Taikatalvi Aapinen",
+    "id": "taikatalvi",
+    "title": "<em>Taikatalvi</em>",
     "image": "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?auto=format&fit=crop&w=800&q=80",
     "imageAlt": "A snowy, mysterious winter forest capturing the atmosphere of Moominland Midwinter",
     "description": "A digital primer (<em>aapinen</em>) inspired by Tove Jansson's classic Moomin novel <em>Taikatalvi</em>.",

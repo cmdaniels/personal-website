@@ -18,32 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   }
 
-  // 2. Render Academic Portfolios Section
-  const portfolios = document.getElementById('academic-portfolios');
-  if (portfolios) {
-    portfolios.innerHTML = `
-      <div class="section-header">
-        <h2>Academic Portfolios</h2>
-        <span class="section-line"></span>
-      </div>
-      <div class="links-grid">
-        <a href="https://github.com/cmdaniels" class="portfolio-link" target="_blank" rel="noopener">
-          <div class="portfolio-link-header">
-            <div class="link-title">GitHub Portfolio</div>
-            <span class="link-arrow">↗</span>
-          </div>
-          <p class="link-desc">Complete source code repositories, NLP utilities, and academic linguistics libraries.</p>
-        </a>
-        <a href="https://codepen.io/cmdaniels" class="portfolio-link" target="_blank" rel="noopener">
-          <div class="portfolio-link-header">
-            <div class="link-title">CodePen Sandbox</div>
-            <span class="link-arrow">↗</span>
-          </div>
-          <p class="link-desc">Small interactive front-end layouts, animations, and quick UI prototypes.</p>
-        </a>
-      </div>
-    `;
-  }
 
   // 3. Render Footer
   const footer = document.getElementById('site-footer');
