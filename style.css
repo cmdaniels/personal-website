@@ -678,8 +678,7 @@ em {
 
 /* Accessibility / Focus States */
 a:focus-visible,
-.portfolio-link:focus-visible,
-.project-card:focus-within {
+.portfolio-link:focus-visible {
   outline: 2px solid var(--accent-color);
   outline-offset: 4px;
 }
