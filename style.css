@@ -131,6 +131,7 @@ em {
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 24px;
   font-family: var(--font-sans);
   font-size: 0.95rem;
@@ -148,6 +149,18 @@ em {
 .nav-links a:hover {
   border-bottom-color: var(--accent-color);
   color: var(--accent-color);
+}
+
+.nav-links a.active {
+  font-weight: 600;
+  border-bottom-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.nav-divider {
+  color: var(--text-muted);
+  user-select: none;
+  opacity: 0.4;
 }
 
 /* Main Content Layout */
@@ -249,7 +262,7 @@ em {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
-  background-color: var(--text-muted);
+  background-color: var(--border-color);
   border-top: var(--border-width) solid var(--border-color);
 }
 
@@ -396,6 +409,35 @@ em {
 .project-card-link:hover {
   color: var(--accent-light);
   border-bottom-color: var(--accent-light);
+}
+
+/* Call to Action Container */
+.view-all-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.view-all-btn {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-color);
+  background-color: transparent;
+  border: var(--border-width) solid var(--border-color);
+  padding: 16px 32px;
+  text-decoration: none;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.view-all-btn:hover {
+  background-color: var(--border-color);
+  color: var(--bg-color);
 }
 
 /* Links/Portfolios Section */
