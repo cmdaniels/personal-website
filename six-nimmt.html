@@ -192,7 +192,8 @@
     }
 
     .board-panel {
-      display: contents; /* Let children place themselves in grid */
+      display: contents;
+      /* Let children place themselves in grid */
     }
 
     .info-panel {
@@ -204,17 +205,20 @@
     }
 
     /* Grid placements to make played cards and hand span full width on large screens */
-    .board-panel > .panel-card:nth-child(1) { /* Rows on Board */
+    .board-panel>.panel-card:nth-child(1) {
+      /* Rows on Board */
       grid-column: 1;
       grid-row: 1;
     }
 
-    .played-cards-card { /* Revealed Played Cards */
+    .played-cards-card {
+      /* Revealed Played Cards */
       grid-column: 1 / span 2;
       grid-row: 2;
     }
 
-    .hand-area-card { /* Player's Hand */
+    .hand-area-card {
+      /* Player's Hand */
       grid-column: 1 / span 2;
       grid-row: 3;
     }
@@ -225,19 +229,23 @@
         flex-direction: column;
         gap: 24px;
       }
+
       .board-panel {
         display: flex;
         flex-direction: column;
         gap: 24px;
       }
+
       .info-panel {
         grid-column: auto;
         grid-row: auto;
       }
-      .board-panel > .panel-card:nth-child(1) {
+
+      .board-panel>.panel-card:nth-child(1) {
         grid-column: auto;
         grid-row: auto;
       }
+
       .played-cards-card,
       .hand-area-card {
         grid-column: auto;
@@ -249,42 +257,54 @@
       .game-grid {
         gap: 16px;
       }
+
       .panel-card {
         padding: 12px;
       }
+
       .game-row {
         padding: 8px;
         gap: 6px;
       }
+
       .row-cards {
         gap: 4px;
       }
+
       .game-card {
         padding: 4px;
         border-width: 1px;
       }
+
       .card-corner {
         font-size: 0.6rem;
       }
+
       .card-center-number {
         font-size: 1.1rem;
       }
+
       .card-bull-icons {
         font-size: 0.45rem;
         bottom: 15%;
       }
+
       .played-cards-grid {
         gap: 8px;
       }
+
       .played-cards-grid .game-card {
         width: 60px;
       }
+
       .hand-cards-flex {
         gap: 8px;
       }
+
       .hand-cards-flex .game-card {
         width: 65px;
       }
+
       .empty-thought-msg,
       .empty-hand-msg,
       .empty-played-msg {
@@ -708,6 +728,9 @@
         <header class="post-header">
           <h1 class="post-title">Beating "6 nimmt!" with Monte Carlo Minimax Search</h1>
           <div class="post-meta">Published June 14, 2026</div>
+          <div class="pdf-link-container">
+            <a href="./files/6 nimmt.pdf" target="_blank" rel="noopener" class="pdf-link">PDF Report ↗</a>
+          </div>
         </header>
 
         <section class="post-body">
