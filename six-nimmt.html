@@ -26,6 +26,7 @@
     /* Custom style overrides and components for Six Nimmt Game */
 
     .blog-container {
+      width: 100%;
       max-width: 900px;
       margin: 0 auto;
       padding: 0 24px;
@@ -64,6 +65,7 @@
       margin: 32px 0;
       border: var(--border-width) solid var(--border-color);
       overflow-x: auto;
+      max-width: 100%;
     }
 
     .stats-table {
@@ -107,6 +109,7 @@
 
     /* Setup Modal/Card styles */
     .setup-panel {
+      width: 100%;
       max-width: 500px;
       margin: 0 auto;
       display: flex;
@@ -138,6 +141,8 @@
       font-size: 1rem;
       outline: none;
       transition: var(--transition);
+      width: 100%;
+      max-width: 100%;
     }
 
     .form-control:focus {
@@ -254,6 +259,10 @@
     }
 
     @media (max-width: 550px) {
+      .blog-container {
+        padding: 0 16px;
+      }
+
       .game-grid {
         gap: 16px;
       }
@@ -373,7 +382,7 @@
 
     .row-cards {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 8px;
     }
 

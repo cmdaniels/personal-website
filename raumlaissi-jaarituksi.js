@@ -1184,8 +1184,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const leftPos = rect.left + window.scrollX + (rect.width / 2) - (tooltipRect.width / 2);
       const topPos = rect.top + window.scrollY - tooltipRect.height - 8;
+      const maxLeft = window.innerWidth - tooltipRect.width - 8;
 
-      tooltip.style.left = `${Math.max(8, leftPos)}px`;
+      tooltip.style.left = `${Math.max(8, Math.min(maxLeft, leftPos))}px`;
       tooltip.style.top = `${topPos}px`;
     }
   });
@@ -1225,8 +1226,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const leftPos = rect.left + window.scrollX + (rect.width / 2) - (tooltipRect.width / 2);
       const topPos = rect.top + window.scrollY - tooltipRect.height - 8;
+      const maxLeft = window.innerWidth - tooltipRect.width - 8;
 
-      tooltip.style.left = `${Math.max(8, leftPos)}px`;
+      tooltip.style.left = `${Math.max(8, Math.min(maxLeft, leftPos))}px`;
       tooltip.style.top = `${topPos}px`;
     }
   });
