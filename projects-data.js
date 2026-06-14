@@ -71,12 +71,12 @@ const projectsData = [
   },
   {
     "id": "kikuyu-fieldwork",
-    "title": "Language Documentation: Kikuyu (Gĩkũyũ)",
+    "title": "Kikuyu Grammar Sketch",
     "image": "./images/thumbnails/kikuyu-fieldwork.webp",
     "imageAlt": "Vintage ink pen writing in fieldwork notebooks",
     "description": "Documented the grammatical structures of Kikuyu with a native consultant.",
     "tags": ["Fieldwork", "IPA", "Morphosyntax"],
-    "link": "./files/Field Notebook.pdf",
+    "link": "./projects/kikuyu-fieldwork.html",
     "featured": true
   },
   {

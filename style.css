@@ -2314,6 +2314,7 @@ a:focus-visible,
     opacity: 0;
     transform: translateY(8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -2375,4 +2376,136 @@ a:focus-visible,
   color: var(--text-color);
   margin: 0;
   max-width: 620px;
+}
+
+/* ==========================================
+   Linguistic Interlinear Examples
+   ========================================== */
+
+.linguistic-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 720px;
+  margin: 0 auto 24px auto;
+  text-align: justify;
+}
+
+.linguistic-example {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.example-number {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  min-width: 28px;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+.example-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.example-form {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
+.example-gloss {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Small-caps for grammatical abbreviations inside glosses */
+.example-gloss span {
+  font-variant: small-caps;
+  font-size: 0.9em;
+  letter-spacing: 0.03em;
+}
+
+.example-trans {
+  font-family: var(--font-body);
+  font-size: 0.925rem;
+  color: var(--text-color);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+/* ==========================================
+   Appendix Accordion
+   ========================================== */
+
+.appendix-accordion {
+  margin-top: 48px;
+  border-top: var(--border-width) solid var(--border-color);
+}
+
+.appendix-details {
+  border-bottom: var(--border-width) solid var(--border-color);
+}
+
+/* Remove the default browser disclosure triangle */
+.appendix-summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 0;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.appendix-summary::-webkit-details-marker {
+  display: none;
+}
+
+.appendix-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+  flex-shrink: 0;
+}
+
+.appendix-title {
+  font-family: var(--font-sans);
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: var(--text-color);
+  flex: 1;
+}
+
+.appendix-chevron {
+  color: var(--text-muted);
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.appendix-details[open] .appendix-chevron {
+  transform: rotate(180deg);
+}
+
+.appendix-summary:hover .appendix-title {
+  color: var(--accent-color);
+}
+
+.appendix-body {
+  padding-bottom: 32px;
+  animation: resultFadeIn 0.3s ease forwards;
 }

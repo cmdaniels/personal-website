@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function () {
+      const theme = localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <title>Kikuyu Grammar Sketch — Cody Daniels</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="A field linguistics report documenting the grammatical structures of Kikuyu (Gĩkũyũ), a Bantu language of central Kenya, based on elicitation sessions with a native consultant.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,wght@0,300..600;1,300..600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script defer src="../layout-renderer.js"></script>
+</head>
+
+<body>
+
+  <div class="site-wrapper">
+    <header class="site-header" id="site-header" data-active="projects"></header>
+
+    <main class="site-content">
+
+      <div class="page-banner">
+        <img src="../images/banners/road.jpg" alt="Kikuyu Field Report Banner">
+      </div>
+
+      <article class="academic-article">
+        <header class="article-header">
+          <h1 class="article-title">Kikuyu Grammar Sketch</h1>
+          <p class="article-subtitle">A Language Description Project using Field Methods</p>
+          <div class="article-meta">Spring 2026</div>
+          <div class="pdf-link-container">
+            <a href="../files/Field Notebook.pdf" target="_blank" rel="noopener" class="pdf-link">PDF Report ↗</a>
+          </div>
+        </header>
+
+        <section>
+          <h2>Linguistic Background</h2>
+          <p>The Kikuyu (Gĩkũyũ) language (code E51 in Guthrie's classification) belongs to the Bantu branch of the
+            Niger-Congo language family and is typically spoken in central Kenya among Kikuyu tribal members. There are
+            roughly 7 million speakers of Kikuyu. Intergenerational transmission of Kikuyu is strong, although younger
+            generations are innovative in their language use and may not understand older expressions as well. Broad use
+            of Kikuyu online supports the language's vitality among most demographics.</p>
+          <p>Multilingualism among Kikuyu speakers is common as Swahili and English are the official languages of Kenya
+            and taught in schools. Kikuyu exhibits great regional variation.</p>
+        </section>
+
+        <section>
+          <h2>Consultant Profile</h2>
+          <p>Our consultant is a male between 40 and 50 years old and was born in Rumuruti, Kenya as a member of the
+            Kikuyu tribe. Kikuyu is his native language, or as he puts it, the language in which he can express himself
+            in a deeper way. He studied it in school from approximately grades one to three. The primary language of
+            instruction in school was English, which he is still proficient in and uses frequently. Swahili was also
+            taught in school and functions as the national language of Kenya and a lingua franca with other tribes. Code
+            switching between Kikuyu, Swahili, and English was common in Kenya. While living in Finland, he has also
+            learned some Finnish for basic interactions.</p>
+          <p>At home, he still speaks mostly Kikuyu with his wife and children. English is the predominant language at
+            work. He reads and writes English, Swahili, and Kikuyu when communicating online with his friends and
+            family.
+            He mentioned being exposed to the Sheng slang spoken by the younger generation in Kenya but not being able
+            to
+            understand it very well. He suggests that younger speakers of Kikuyu may not understand some traditional
+            vocabulary and idioms either. His grandparents only spoke Kikuyu and never used other languages.</p>
+          <p>During his time in Kenya, he mostly lived in Rumuruti, but he also lived for three years in Thika. He first
+            moved to Finland in 2004 to study information technology in Oulu where he received a bachelor's degree. He
+            has worked in the IT industry in Finland and has also lived in Turku and now Helsinki, his current
+            residence.
+          </p>
+        </section>
+
+        <section>
+          <h2>Orthography and Phonetic Inventory</h2>
+          <p>Kikuyu has a standard orthography where each symbol corresponds with a single phoneme. There are 18
+            consonants and 7 vowels as shown in the tables below. Many orthographic symbols match the standard IPA
+            notation, but in places where the orthography differs, the orthographic symbols are placed in parentheses.
+            See Appendix 1 for a Leipzig-Jakarta word list complete with transcriptions in IPA and Appendix 2 for a
+            glossed sample text.</p>
+
+          <div class="academic-table-container">
+            <table class="academic-table">
+              <thead>
+                <tr>
+                  <th>Consonants</th>
+                  <th>Bilabial</th>
+                  <th>Dental</th>
+                  <th>Alveolar</th>
+                  <th>Postalveolar</th>
+                  <th>Palatal</th>
+                  <th>Velar</th>
+                  <th>Glottal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Stop</td>
+                  <td>ᵐb (mb)</td>
+                  <td></td>
+                  <td>t, ⁿd (nd)</td>
+                  <td></td>
+                  <td></td>
+                  <td>k, ᵑg (ng)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Nasal</td>
+                  <td>m</td>
+                  <td></td>
+                  <td>n</td>
+                  <td></td>
+                  <td>ɲ (ny)</td>
+                  <td>ŋ (ng')</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Tap</td>
+                  <td></td>
+                  <td></td>
+                  <td>ɾ (r)</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Fricative</td>
+                  <td>β (b)</td>
+                  <td>ð (th)</td>
+                  <td></td>
+                  <td>ʃ (c)</td>
+                  <td></td>
+                  <td>ɣ (g)</td>
+                  <td>h</td>
+                </tr>
+                <tr>
+                  <td>Affricate</td>
+                  <td></td>
+                  <td></td>
+                  <td>ⁿd͡ʒ (nj)</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Approximant</td>
+                  <td>w</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>j (y)</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="academic-table-caption">Table 1. Consonant inventory</div>
+
+          <div class="academic-table-container" style="max-width: 600px; margin-inline: auto;">
+            <table class="academic-table">
+              <thead>
+                <tr>
+                  <th>Vowels</th>
+                  <th>Front</th>
+                  <th>Central</th>
+                  <th>Back</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>High</td>
+                  <td>i</td>
+                  <td></td>
+                  <td>u</td>
+                </tr>
+                <tr>
+                  <td>Mid High</td>
+                  <td>e (ĩ)</td>
+                  <td></td>
+                  <td>o (ũ)</td>
+                </tr>
+                <tr>
+                  <td>Mid Low</td>
+                  <td>ɛ (e)</td>
+                  <td></td>
+                  <td>ɔ (o)</td>
+                </tr>
+                <tr>
+                  <td>Low</td>
+                  <td></td>
+                  <td>a</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="academic-table-caption">Table 2. Vowel inventory</div>
+
+          <h3>Minimal Pairs</h3>
+          <p>The table below contains some examples of minimal pairs found during elicitation. They provide supporting
+            evidence for the division of sounds above.</p>
+
+          <div class="academic-table-container" style="max-width: 600px; margin-inline: auto;">
+            <table class="academic-table">
+              <thead>
+                <tr>
+                  <th>Form 1</th>
+                  <th>Form 2</th>
+                  <th>Sound 1</th>
+                  <th>Sound 2</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>kuoha</td>
+                  <td>kuona</td>
+                  <td>h</td>
+                  <td>n</td>
+                </tr>
+                <tr>
+                  <td>nyamũ</td>
+                  <td>nyama</td>
+                  <td>ũ</td>
+                  <td>a</td>
+                </tr>
+                <tr>
+                  <td>kĩnyoni</td>
+                  <td>kanyoni</td>
+                  <td>ĩ</td>
+                  <td>a</td>
+                </tr>
+                <tr>
+                  <td>nĩtũrĩaga</td>
+                  <td>nĩmũrĩaga</td>
+                  <td>t</td>
+                  <td>m</td>
+                </tr>
+                <tr>
+                  <td>ĩno</td>
+                  <td>ĩo</td>
+                  <td>n</td>
+                  <td>Ø</td>
+                </tr>
+                <tr>
+                  <td>irio</td>
+                  <td>icio</td>
+                  <td>r</td>
+                  <td>c</td>
+                </tr>
+                <tr>
+                  <td>mũting'oe</td>
+                  <td>mĩting'oe</td>
+                  <td>ũ</td>
+                  <td>ĩ</td>
+                </tr>
+                <tr>
+                  <td>aya</td>
+                  <td>maya</td>
+                  <td>Ø</td>
+                  <td>m</td>
+                </tr>
+                <tr>
+                  <td>njerũ</td>
+                  <td>njirũ</td>
+                  <td>e</td>
+                  <td>i</td>
+                </tr>
+                <tr>
+                  <td>ndũrũ</td>
+                  <td>ngũrũ</td>
+                  <td>d</td>
+                  <td>g</td>
+                </tr>
+                <tr>
+                  <td>rĩa</td>
+                  <td>rĩra</td>
+                  <td>Ø</td>
+                  <td>r</td>
+                </tr>
+                <tr>
+                  <td>nĩĩroka</td>
+                  <td>nĩiroka</td>
+                  <td>ĩ</td>
+                  <td>i</td>
+                </tr>
+                <tr>
+                  <td>ira</td>
+                  <td>ira</td>
+                  <td colspan="2" style="text-align:center">tone</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="academic-table-caption">Table 3. Minimal pairs</div>
+
+          <p>The last example above examines a pair where the consultant claimed an orthographical distinction
+            unexpected
+            by the field linguists. The field linguists hypothesized that there could potentially be a difference in
+            vowel length or tone between the two. Analysis shows that in reality the two are pronounced more or less the
+            same, although vowel length and tone are sometimes relevant elsewhere in Kikuyu.</p>
+        </section>
+
+        <section>
+          <h2>Personal Pronouns and Demonstratives</h2>
+          <p>The following table describes personal pronouns and their corresponding subject markers which appear as a
+            prefix on the verb root.</p>
+
+          <div class="academic-table-container" style="max-width: 600px; margin-inline: auto;">
+            <table class="academic-table">
+              <thead>
+                <tr>
+                  <th>Person</th>
+                  <th>Pronoun</th>
+                  <th>Subject Marker</th>
+                  <th>Example</th>
+                  <th>Translation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1<sub>SG</sub></td>
+                  <td>nii</td>
+                  <td>ndĩ-</td>
+                  <td>nii nĩ-ndĩ-ya-ga</td>
+                  <td>I eat</td>
+                </tr>
+                <tr>
+                  <td>2<sub>SG</sub></td>
+                  <td>we</td>
+                  <td>ũ-</td>
+                  <td>we nĩ-ũ-rĩa-ga</td>
+                  <td>you (sg.) eat</td>
+                </tr>
+                <tr>
+                  <td>3<sub>SG</sub></td>
+                  <td>we, ũcio</td>
+                  <td>a-</td>
+                  <td>we nĩ-a-rĩa-ga</td>
+                  <td>(s)he eats</td>
+                </tr>
+                <tr>
+                  <td>1<sub>PL</sub></td>
+                  <td>ithuĩ</td>
+                  <td>tũ-</td>
+                  <td>ithuĩ nĩ-tũ-rĩa-ga</td>
+                  <td>we eat</td>
+                </tr>
+                <tr>
+                  <td>2<sub>PL</sub></td>
+                  <td>inyuĩ</td>
+                  <td>mũ-</td>
+                  <td>inyuĩ nĩ-mũ-rĩa-ga</td>
+                  <td>you (pl.) eat</td>
+                </tr>
+                <tr>
+                  <td>3<sub>PL</sub></td>
+                  <td>acio</td>
+                  <td>ma-</td>
+                  <td>acio nĩ-ma-rĩa-ga</td>
+                  <td>they eat</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="academic-table-caption">Table 4. Personal pronouns and subject markers</div>
+
+          <p>Demonstrative pronouns agree with noun class. In Kikuyu, there are demonstrative pronouns to describe five
+            different degrees of distance: proximal, proximal invisible, medial, distal, and very distal. In instances
+            where the distal and very distal match, the final syllable is emphasized.</p>
+
+          <div class="academic-table-container" style="max-width: 600px; margin-inline: auto;">
+            <table class="academic-table">
+              <thead>
+                <tr>
+                  <th>Class</th>
+                  <th>Proximal</th>
+                  <th>Prox. Invis.</th>
+                  <th>Medial</th>
+                  <th>Distal</th>
+                  <th>Very Distal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>6 (Pl)</td>
+                  <td>maya</td>
+                  <td>macio</td>
+                  <td>marĩa</td>
+                  <td>oromau</td>
+                  <td>oromacio</td>
+                </tr>
+                <tr>
+                  <td>7 (Sg)</td>
+                  <td>gĩkĩ</td>
+                  <td>kĩu</td>
+                  <td>kĩrĩa</td>
+                  <td>orokĩu</td>
+                  <td>oro<em>kĩu</em></td>
+                </tr>
+                <tr>
+                  <td>8 (Pl)</td>
+                  <td>ĩci</td>
+                  <td>icio</td>
+                  <td>iria</td>
+                  <td>oroicio</td>
+                  <td>oro<em>icio</em></td>
+                </tr>
+                <tr>
+                  <td>9 (Sg)</td>
+                  <td>ĩno</td>
+                  <td>ĩo</td>
+                  <td>ĩrĩa</td>
+                  <td>oroĩo</td>
+                  <td>oro<em>ĩo</em></td>
+                </tr>
+                <tr>
+                  <td>10 (Pl)</td>
+                  <td>ĩci</td>
+                  <td>icio</td>
+                  <td>iria</td>
+                  <td>oroicio</td>
+                  <td>oro<em>icio</em></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="academic-table-caption">Table 5. Demonstrative pronouns by noun class and distance</div>
+        </section>
+
+        <section>
+          <h2>Noun Classes</h2>
+          <p>According to external sources, there are potentially 17 noun classes in Kikuyu, but only the first 13
+            appeared in elicited data. While there is sometimes a semantic basis for which nouns belong to which
+            classes,
+            there is rarely a completely reliable theme.</p>
+
+          <div class="academic-table-container">
+            <table class="academic-table">
+              <thead>
+                <tr>
+                  <th>Class</th>
+                  <th>Notes</th>
+                  <th>Noun Prefix</th>
+                  <th>Subject Marker</th>
+                  <th>Examples</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1 (Sg)</td>
+                  <td>People</td>
+                  <td>mũ-</td>
+                  <td>a-</td>
+                  <td>mũndũ (person), mũtumia (woman), mwana (child)</td>
+                </tr>
+                <tr>
+                  <td>2 (Pl)</td>
+                  <td>People</td>
+                  <td>a-</td>
+                  <td>ma-</td>
+                  <td>andũ (people)</td>
+                </tr>
+                <tr>
+                  <td>1a (Sg)</td>
+                  <td>Kinship terms</td>
+                  <td>Ø</td>
+                  <td>a-</td>
+                  <td>mami (mother)</td>
+                </tr>
+                <tr>
+                  <td>2a (Pl)</td>
+                  <td>Kinship terms</td>
+                  <td>Ø</td>
+                  <td>ma-</td>
+                  <td>mami (mothers)</td>
+                </tr>
+                <tr>
+                  <td>3 (Sg)</td>
+                  <td></td>
+                  <td>mũ-</td>
+                  <td>ũ-</td>
+                  <td>mũting'oe (tail), mũciĩ (home)</td>
+                </tr>
+                <tr>
+                  <td>4 (Pl)</td>
+                  <td></td>
+                  <td>mĩ-</td>
+                  <td>Ø</td>
+                  <td>mĩting'oe (tails), mĩciĩ (homes)</td>
+                </tr>
+                <tr>
+                  <td>5 (Sg)</td>
+                  <td></td>
+                  <td>i-</td>
+                  <td>rĩ-</td>
+                  <td>itumbĩ (egg), ithangũ (leaf)</td>
+                </tr>
+                <tr>
+                  <td>6 (Pl)</td>
+                  <td>Augmentative</td>
+                  <td>ma-</td>
+                  <td>ma-</td>
+                  <td>matumbĩ (eggs), mathangũ (leaves), manyoni (big birds)</td>
+                </tr>
+                <tr>
+                  <td>6 (Mass)</td>
+                  <td>Mass nouns</td>
+                  <td>ma-</td>
+                  <td>ma-</td>
+                  <td>maĩ (water)</td>
+                </tr>
+                <tr>
+                  <td>7 (Sg)</td>
+                  <td>Augmentative</td>
+                  <td>kĩ-, gĩ-</td>
+                  <td>kĩ-, gĩ-</td>
+                  <td>gĩkombe (cup), kĩnyoni (big bird), kĩtumbĩ (big egg)</td>
+                </tr>
+                <tr>
+                  <td>8 (Pl)</td>
+                  <td></td>
+                  <td>i-</td>
+                  <td>ci-</td>
+                  <td>ikombe (cups)</td>
+                </tr>
+                <tr>
+                  <td>9 (Sg)</td>
+                  <td>Animals</td>
+                  <td>ng-, ny-</td>
+                  <td>Ø</td>
+                  <td>ngui (dog), nyamũ (animal), nyoni (bird), nyũmba (house), nyama (meat/flesh)</td>
+                </tr>
+                <tr>
+                  <td>10 (Pl)</td>
+                  <td></td>
+                  <td>ng-, ny-</td>
+                  <td>i-</td>
+                  <td>ngui (dogs), nyamũ (animals), nyoni (birds), nyũmba (houses)</td>
+                </tr>
+                <tr>
+                  <td>11 (Sg)</td>
+                  <td></td>
+                  <td>rũ-</td>
+                  <td>rũ-</td>
+                  <td>rũrĩmĩ (tongue), rũhĩa (horn)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="academic-table-caption">Table 6. Noun classes</div>
+        </section>
+
+        <section>
+          <h2>Tense, Aspect, and Mood</h2>
+          <p>Kikuyu verbs are generally constructed by stringing together morphemes using the following paradigm:</p>
+          <p
+            style="font-family: var(--font-sans); font-size: 0.9rem; text-align: center; letter-spacing: 0.02em; margin: 24px 0;">
+            Focus – Subject – Negative – Tense – Object – Root – Applicative – Aspect – Final Vowel
+          </p>
+          <p>The following tables provide the morphemes for tense and aspect, respectively.</p>
+
+          <div class="academic-table-container">
+            <table class="academic-table">
+              <thead>
+                <tr>
+                  <th>Tense</th>
+                  <th>Prefix</th>
+                  <th>Example</th>
+                  <th>Translation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Remote Past</td>
+                  <td>ya-</td>
+                  <td>ny-au nĩ-ya-teng'era-ga</td>
+                  <td>the cat ran (long ago)</td>
+                </tr>
+                <tr>
+                  <td>Medial Past</td>
+                  <td>ra-</td>
+                  <td>ny-au nĩ-ra-teng'era-ga ira</td>
+                  <td>the cat ran (yesterday)</td>
+                </tr>
+                <tr>
+                  <td>Recent Past</td>
+                  <td>gũ-</td>
+                  <td>ny-au nĩ-gũ-teng'era-ga</td>
+                  <td>the cat ran (recent, today)</td>
+                </tr>
+                <tr>
+                  <td>Present Progressive</td>
+                  <td>ra-</td>
+                  <td>ny-au nĩ-ra-teng'er-a ũmũthi</td>
+                  <td>the cat is running today</td>
+                </tr>
+                <tr>
+                  <td>Near Future</td>
+                  <td>gũ- / kũ-</td>
+                  <td>ny-au nĩ-gũ-teng'er-a ũmũthi</td>
+                  <td>the cat will run today</td>
+                </tr>
+                <tr>
+                  <td>Remote Future</td>
+                  <td>ga-</td>
+                  <td>ny-au nĩ-ga-teng'er-a rũciũ</td>
+                  <td>the cat will run tomorrow</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="academic-table-caption">Table 7. Tense prefixes</div>
+
+          <div class="academic-table-container" style="max-width: 600px; margin-inline: auto;">
+            <table class="academic-table">
+              <thead>
+                <tr>
+                  <th>Aspect</th>
+                  <th>Affix</th>
+                  <th>Example</th>
+                  <th>Translation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Habitual / Imperfective</td>
+                  <td>-ga</td>
+                  <td>ny-au nĩ-teng'era-ga</td>
+                  <td>the cat often runs</td>
+                </tr>
+                <tr>
+                  <td>Perfect</td>
+                  <td>-te</td>
+                  <td>nĩ-ng-ũ-rĩ-te</td>
+                  <td>I have eaten (previously)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="academic-table-caption">Table 8. Aspect affixes</div>
+
+          <p>Regarding mood, the imperative form of the verb has only the final vowel and no additional morphemes, as
+            in <em>cin-a</em> (burn) and <em>rĩ-a</em> (eat).</p>
+        </section>
+
+        <section>
+          <h2>Applicatives and Causatives</h2>
+          <h3>Applicatives</h3>
+          <p>Applicatives in Kikuyu are a valence-increasing operation marked by the suffix <em>-ĩr</em>. The additional
+            argument is often used to mark the beneficiary of an action. Example (1) shows a sentence without an
+            applicative. Example (2) shows the same sentence with an applicative. Note the <em>-ĩr</em> suffix appears
+            and
+            adds another prefix to describe the benefactor, in this case <em>gũ-</em> for the second-person singular.
+          </p>
+
+          <div class="linguistic-examples">
+            <div class="linguistic-example">
+              <span class="example-number">(1)</span>
+              <div class="example-body">
+                <div class="example-form">nĩ-ndĩ-ra-thondek-a mũ-gate</div>
+                <div class="example-gloss">
+                  <span>FOC</span>-1<sub>SG</sub>.<span>SUBJ</span>-<span>PRES</span>.<span>PROG</span>-make-<span>FV</span>
+                  <span>CL</span>3-bread
+                </div>
+                <div class="example-trans">'I am making bread.'</div>
+              </div>
+            </div>
+            <div class="linguistic-example">
+              <span class="example-number">(2)</span>
+              <div class="example-body">
+                <div class="example-form">nĩ-ndĩ-ra-gũ-thondek-ĩr-a mũ-gate</div>
+                <div class="example-gloss">
+                  <span>FOC</span>-1<sub>SG</sub>.<span>SUBJ</span>-<span>PRES</span>.<span>PROG</span>-2<sub>SG</sub>.<span>OBJ</span>-make-<span>APPL</span>-<span>FV</span>
+                  <span>CL</span>3-bread
+                </div>
+                <div class="example-trans">'I am making bread for you.'</div>
+              </div>
+            </div>
+          </div>
+
+          <h3>Causatives</h3>
+          <p>Causatives in Kikuyu are also valence-increasing, but the additional argument is an agent who makes another
+            participant complete an action. Some causatives are lexical, so the causative meaning is included in the
+            verb
+            root as in example (3) below with the verb <em>he</em> (to give). Other causatives are analytic, meaning
+            they
+            use the modal verb <em>tũma</em> (to send) to convey the causative meaning like in example (4).</p>
+
+          <div class="linguistic-examples">
+            <div class="linguistic-example">
+              <span class="example-number">(3)</span>
+              <div class="example-body">
+                <div class="example-form">mũ-thuri nĩ-a-ra-he ny-oni i-rio</div>
+                <div class="example-gloss"><span>CL</span>1-man
+                  <span>FOC</span>-<span>CL</span>1.<span>SUBJ</span>-<span>PRES</span>.<span>PROG</span>-give
+                  <span>CL</span>9-bird <span>CL</span>8-food
+                </div>
+                <div class="example-trans">'The man is feeding the bird food.'</div>
+              </div>
+            </div>
+            <div class="linguistic-example">
+              <span class="example-number">(4)</span>
+              <div class="example-body">
+                <div class="example-form">mũ-thuri nĩ-a-ra-tũm-a nyoni ĩ-rĩ-e</div>
+                <div class="example-gloss"><span>CL</span>1-man
+                  <span>FOC</span>-<span>CL</span>1-<span>PRES</span>.<span>PRG</span>-make-<span>FV</span>
+                  <span>CL</span>9.bird <span>CL</span>9-eat-<span>FV</span>
+                </div>
+                <div class="example-trans">'The man is making the bird eat.'</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Existential and Possessive Constructions</h2>
+          <h3>Possessive Constructions</h3>
+          <p>Possession in Kikuyu is expressed using the word <em>na</em> (with). Personal suffixes can be applied
+            directly to <em>na</em> to mark ownership as in the table below.</p>
+
+          <div class="academic-table-container" style="max-width: 600px; margin-inline: auto;">
+            <table class="academic-table">
+              <thead>
+                <tr>
+                  <th>Person</th>
+                  <th>Prefix</th>
+                  <th>Example</th>
+                  <th>Translation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1<sub>SG</sub></td>
+                  <td>ndĩ-</td>
+                  <td>ndĩ-na ny-au</td>
+                  <td>I have a cat</td>
+                </tr>
+                <tr>
+                  <td>2<sub>SG</sub></td>
+                  <td>wĩ-</td>
+                  <td>wĩ-na ny-au</td>
+                  <td>you have a cat</td>
+                </tr>
+                <tr>
+                  <td>3<sub>SG</sub></td>
+                  <td>e-</td>
+                  <td>e-na ny-au</td>
+                  <td>she/he has a cat</td>
+                </tr>
+                <tr>
+                  <td>1<sub>PL</sub></td>
+                  <td>twĩ-</td>
+                  <td>twĩ-na ny-au</td>
+                  <td>we have a cat</td>
+                </tr>
+                <tr>
+                  <td>2<sub>PL</sub></td>
+                  <td>mwĩ-</td>
+                  <td>mwĩ-na ny-au</td>
+                  <td>you all have a cat</td>
+                </tr>
+                <tr>
+                  <td>3<sub>PL</sub></td>
+                  <td>me-</td>
+                  <td>me-na ny-au</td>
+                  <td>they have a cat</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="academic-table-caption">Table 9. Possessive construction</div>
+
+          <p>In a more extended form, the possessive construction uses a copular verb:</p>
+
+          <div class="linguistic-examples">
+            <div class="linguistic-example">
+              <span class="example-number">(5)</span>
+              <div class="example-body">
+                <div class="example-form">mũ-thuri oima na ny-au</div>
+                <div class="example-gloss"><span>CL</span>1-man <span>RECENT</span>.<span>PST</span>.<span>COP</span>
+                  with <span>CL</span>9-cat</div>
+                <div class="example-trans">'The man had a cat today.'</div>
+              </div>
+            </div>
+            <div class="linguistic-example">
+              <span class="example-number">(6)</span>
+              <div class="example-body">
+                <div class="example-form">ndĩ-ra-rĩ na ny-au</div>
+                <div class="example-gloss">
+                  1<sub>SG</sub>.<span>SUBJ</span>-<span>MED</span>.<span>PST</span>-<span>COP</span> with
+                  <span>CL</span>9-cat
+                </div>
+                <div class="example-trans">'I had a cat yesterday.'</div>
+              </div>
+            </div>
+          </div>
+
+          <h3>Existential Constructions</h3>
+          <p>Existential and locative expressions are also constructed using the word <em>na</em> (with) and a copular
+            verb. See the examples below:</p>
+
+          <div class="linguistic-examples">
+            <div class="linguistic-example">
+              <span class="example-number">(7)</span>
+              <div class="example-body">
+                <div class="example-form">kwĩ-na ny-ama ny-ũmba</div>
+                <div class="example-gloss"><span>PRES</span>.<span>COP</span>-with <span>CL</span>9-meat
+                  <span>CL</span>9-house
+                </div>
+                <div class="example-trans">'There is/are meat(s) in the house(s).'</div>
+              </div>
+            </div>
+            <div class="linguistic-example">
+              <span class="example-number">(8)</span>
+              <div class="example-body">
+                <div class="example-form">kwĩ-na mũ-thuri ny-ũmba</div>
+                <div class="example-gloss"><span>PRES</span>.<span>COP</span>-with <span>CL</span>1-man
+                  <span>CL</span>9-house
+                </div>
+                <div class="example-trans">'There is a man in the house.'</div>
+              </div>
+            </div>
+            <div class="linguistic-example">
+              <span class="example-number">(9)</span>
+              <div class="example-body">
+                <div class="example-form">kwa-rĩ na ny-ama ny-ũmba</div>
+                <div class="example-gloss"><span>REMOTE</span>.<span>PST</span>-<span>COP</span> with
+                  <span>CL</span>9-meat <span>CL</span>9-house
+                </div>
+                <div class="example-trans">'There was meat in the house (distal past).'</div>
+              </div>
+            </div>
+            <div class="linguistic-example">
+              <span class="example-number">(10)</span>
+              <div class="example-body">
+                <div class="example-form">kwa-rĩ na mũ-thuri ny-ũmba</div>
+                <div class="example-gloss"><span>REMOTE</span>.<span>PST</span>-<span>COP</span> with
+                  <span>CL</span>1-man <span>CL</span>9-house
+                </div>
+                <div class="example-trans">'There was a man in the house (distal past).'</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Questions and Negation</h2>
+          <h3>Questions</h3>
+          <p>Some standard question words can be found in the table below. Some question words accept a noun class
+            prefix
+            and just their roots are displayed.</p>
+
+          <div class="academic-table-container" style="max-width: 560px; margin-inline: auto;">
+            <table class="academic-table">
+              <thead>
+                <tr>
+                  <th>English</th>
+                  <th>Kikuyu</th>
+                  <th>Example</th>
+                  <th>Translation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>who</td>
+                  <td>nũũ</td>
+                  <td>nũũ ũ-ra-rĩ-a?</td>
+                  <td>who is eating?</td>
+                </tr>
+                <tr>
+                  <td>what</td>
+                  <td>nĩkĩĩ</td>
+                  <td>nĩ-kĩĩ mũ-ndũ a-ra-rĩ-a?</td>
+                  <td>what is the person eating?</td>
+                </tr>
+                <tr>
+                  <td>where (general)</td>
+                  <td>-kũ</td>
+                  <td>wĩ-kũ?</td>
+                  <td>where are you?</td>
+                </tr>
+                <tr>
+                  <td>where (specific)</td>
+                  <td>-ha</td>
+                  <td>ĩ-ha ng-ui?</td>
+                  <td>where is the dog?</td>
+                </tr>
+                <tr>
+                  <td>when</td>
+                  <td>nĩrĩ</td>
+                  <td>nĩ-rĩ ũ-kom-aga?</td>
+                  <td>when do you sleep?</td>
+                </tr>
+                <tr>
+                  <td>why</td>
+                  <td>nĩkĩ</td>
+                  <td>nĩ-kĩ ũ-ra-rĩ-a?</td>
+                  <td>why are you eating?</td>
+                </tr>
+                <tr>
+                  <td>how</td>
+                  <td>atĩa</td>
+                  <td>ũ-rĩ-aga atĩa?</td>
+                  <td>how do you eat?</td>
+                </tr>
+                <tr>
+                  <td>which</td>
+                  <td>-rĩkũ</td>
+                  <td>nĩ ng-ui ĩ-rĩkũ?</td>
+                  <td>which dog?</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="academic-table-caption">Table 10. Question words</div>
+
+          <p>Sometimes Kikuyu makes lexical distinctions using tones. The statement <em>ngui nĩrarĩa</em> has a
+            relatively flat tone throughout while the question form <em>ngui nĩrarĩa?</em> has a high tone on the
+            subject
+            and a falling tone on the verb.</p>
+
+          <h3>Negation</h3>
+          <p>The negation marker in Kikuyu is the prefix <em>ti-</em> appended to the verb root. The focus particle
+            <em>nĩ-</em> is also removed. The order of the prefix depends on the subject marker. If the subject marker
+            is
+            a single vowel, the negation marker is before the subject marker and morphs into the <em>nd-</em> prefix as
+            in example (11). Otherwise, the negation marker <em>ti-</em> comes after the subject marker like in example
+            (12).
+          </p>
+
+          <div class="linguistic-examples">
+            <div class="linguistic-example">
+              <span class="example-number">(11)</span>
+              <div class="example-body">
+                <div class="example-form">nd-ũ-rĩ-aga ny-ama</div>
+                <div class="example-gloss"><span>NEG</span>-2<sub>SG</sub>.<span>SUBJ</span>-eat-<span>HAB</span>
+                  <span>CL</span>9-meat
+                </div>
+                <div class="example-trans">'You do not eat meat.'</div>
+              </div>
+            </div>
+            <div class="linguistic-example">
+              <span class="example-number">(12)</span>
+              <div class="example-body">
+                <div class="example-form">tũ-ti-rĩ-aga ny-ama</div>
+                <div class="example-gloss">1<sub>PL</sub>.<span>SUBJ</span>-<span>NEG</span>-eat-<span>HAB</span>
+                  <span>CL</span>9-meat
+                </div>
+                <div class="example-trans">'We do not eat meat.'</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>References</h2>
+          <ul class="cv-bullets" style="list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom: 16px; text-indent: -24px; padding-left: 24px;">Maps Kenya (2024). "Kenian heimot
+              kartta." <a
+                href="https://web.archive.org/web/20241220115136/https://fi.maps-kenya-ke.com/kenian-heimot-kartta"
+                target="_blank" rel="noopener">https://fi.maps-kenya-ke.com/kenian-heimot-kartta</a>
+            </li>
+            <li style="margin-bottom: 16px; text-indent: -24px; padding-left: 24px;">Mugane, J. M. (1997). <em>A
+                paradigmatic grammar of Gikuyu</em>. CSLI Publications.</li>
+          </ul>
+        </section>
+
+        <div class="appendix-accordion">
+          <details class="appendix-details">
+            <summary class="appendix-summary">
+              <span class="appendix-label">Appendix 1</span>
+              <span class="appendix-title">Leipzig-Jakarta Word List</span>
+              <span class="appendix-chevron" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 6L8 11L13 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>
+            </summary>
+            <div class="appendix-body">
+              <div class="academic-table-container">
+                <table class="academic-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>English</th>
+                      <th>Kikuyu</th>
+                      <th>IPA</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>fire</td>
+                      <td>mwaki</td>
+                      <td>mwaki</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>nose</td>
+                      <td>iniũrũ / inioro / iniuru</td>
+                      <td>inioɾo / iniɔɾɔ / iniuɾu</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>to go</td>
+                      <td>(gũ)thiĩ</td>
+                      <td>(ɣo)ðie</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>water</td>
+                      <td>maĩ</td>
+                      <td>mae</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>mouth</td>
+                      <td>kanua</td>
+                      <td>kanua</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>tongue</td>
+                      <td>rũrĩmĩ</td>
+                      <td>ɾoɾeme</td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td>blood</td>
+                      <td>thakame</td>
+                      <td>ðakamɛ</td>
+                    </tr>
+                    <tr>
+                      <td>8</td>
+                      <td>bone</td>
+                      <td>ihĩndĩ</td>
+                      <td>iheⁿde</td>
+                    </tr>
+                    <tr>
+                      <td>9</td>
+                      <td>2<sup>nd</sup>-person singular pronoun (you)</td>
+                      <td>we</td>
+                      <td>wɛ</td>
+                    </tr>
+                    <tr>
+                      <td>10</td>
+                      <td>root</td>
+                      <td>mũri</td>
+                      <td>moɾi</td>
+                    </tr>
+                    <tr>
+                      <td>11</td>
+                      <td>to come</td>
+                      <td>(gũ)ka</td>
+                      <td>(ɣo)ka</td>
+                    </tr>
+                    <tr>
+                      <td>12</td>
+                      <td>breast</td>
+                      <td>nyondo</td>
+                      <td>ɲɔⁿdɔ</td>
+                    </tr>
+                    <tr>
+                      <td>13</td>
+                      <td>rain</td>
+                      <td>mbura</td>
+                      <td>ᵐbuɾa</td>
+                    </tr>
+                    <tr>
+                      <td>14</td>
+                      <td>1<sup>st</sup>-person singular pronoun (I/me)</td>
+                      <td>niĩ</td>
+                      <td>nie</td>
+                    </tr>
+                    <tr>
+                      <td>15</td>
+                      <td>name</td>
+                      <td>rĩtwa</td>
+                      <td>ɾetwa</td>
+                    </tr>
+                    <tr>
+                      <td>16</td>
+                      <td>louse</td>
+                      <td>ndaa</td>
+                      <td>ⁿdaa</td>
+                    </tr>
+                    <tr>
+                      <td>17</td>
+                      <td>wing</td>
+                      <td>ithagu</td>
+                      <td>iðaɣu</td>
+                    </tr>
+                    <tr>
+                      <td>18</td>
+                      <td>flesh/meat</td>
+                      <td>nyama</td>
+                      <td>ɲama</td>
+                    </tr>
+                    <tr>
+                      <td>19</td>
+                      <td>arm/hand</td>
+                      <td>gwoko</td>
+                      <td>ɣwɔkɔ</td>
+                    </tr>
+                    <tr>
+                      <td>20</td>
+                      <td>fly</td>
+                      <td>ngi</td>
+                      <td>ᵑgi</td>
+                    </tr>
+                    <tr>
+                      <td>21</td>
+                      <td>night</td>
+                      <td>ũtukũ</td>
+                      <td>ũtukũ</td>
+                    </tr>
+                    <tr>
+                      <td>22</td>
+                      <td>ear</td>
+                      <td>gũtũ</td>
+                      <td>ɣoto</td>
+                    </tr>
+                    <tr>
+                      <td>23</td>
+                      <td>neck</td>
+                      <td>ngingo</td>
+                      <td>ᵑgiᵑgɔ</td>
+                    </tr>
+                    <tr>
+                      <td>24</td>
+                      <td>far</td>
+                      <td>kũraihu</td>
+                      <td>koɾaiho</td>
+                    </tr>
+                    <tr>
+                      <td>25</td>
+                      <td>to do</td>
+                      <td>(gũ)aka</td>
+                      <td>ɣoaka</td>
+                    </tr>
+                    <tr>
+                      <td>26</td>
+                      <td>house</td>
+                      <td>nyũmba</td>
+                      <td>ɲoᵐba</td>
+                    </tr>
+                    <tr>
+                      <td>27</td>
+                      <td>stone/rock</td>
+                      <td>ĩhĩga</td>
+                      <td>eheɣa</td>
+                    </tr>
+                    <tr>
+                      <td>28</td>
+                      <td>bitter</td>
+                      <td>ndũrũ</td>
+                      <td>ⁿdoɾo</td>
+                    </tr>
+                    <tr>
+                      <td>29</td>
+                      <td>to say</td>
+                      <td>(ku)ga</td>
+                      <td>kuɣa</td>
+                    </tr>
+                    <tr>
+                      <td>30</td>
+                      <td>tooth</td>
+                      <td>igego</td>
+                      <td>iɣɛɣɔ</td>
+                    </tr>
+                    <tr>
+                      <td>31</td>
+                      <td>hair</td>
+                      <td>njuĩrĩ</td>
+                      <td>ⁿd͡ʒoeɾe</td>
+                    </tr>
+                    <tr>
+                      <td>32</td>
+                      <td>big</td>
+                      <td>nene</td>
+                      <td>nɛnɛ</td>
+                    </tr>
+                    <tr>
+                      <td>33</td>
+                      <td>one</td>
+                      <td>ĩmwe</td>
+                      <td>emwɛ</td>
+                    </tr>
+                    <tr>
+                      <td>34</td>
+                      <td>who?</td>
+                      <td>nũ</td>
+                      <td>no</td>
+                    </tr>
+                    <tr>
+                      <td>35</td>
+                      <td>3<sup>rd</sup>-person singular pronoun (he/she/it)</td>
+                      <td>ũcio</td>
+                      <td>oʃiɔ</td>
+                    </tr>
+                    <tr>
+                      <td>36</td>
+                      <td>to hit/beat</td>
+                      <td>(kũ)hũra</td>
+                      <td>kohoɾa</td>
+                    </tr>
+                    <tr>
+                      <td>37</td>
+                      <td>leg/foot</td>
+                      <td>(kũ)gũrũ</td>
+                      <td>koɣoɾo</td>
+                    </tr>
+                    <tr>
+                      <td>38</td>
+                      <td>horn</td>
+                      <td>rũhĩa</td>
+                      <td>ɾohea</td>
+                    </tr>
+                    <tr>
+                      <td>39</td>
+                      <td>this</td>
+                      <td>ĩno</td>
+                      <td>enɔ</td>
+                    </tr>
+                    <tr>
+                      <td>40</td>
+                      <td>fish</td>
+                      <td>thamaki</td>
+                      <td>ðamaki</td>
+                    </tr>
+                    <tr>
+                      <td>41</td>
+                      <td>yesterday</td>
+                      <td>ira</td>
+                      <td>iɾa</td>
+                    </tr>
+                    <tr>
+                      <td>42</td>
+                      <td>to drink</td>
+                      <td>(kũ)nyua</td>
+                      <td>koɲoa</td>
+                    </tr>
+                    <tr>
+                      <td>43</td>
+                      <td>black</td>
+                      <td>njirũ</td>
+                      <td>ⁿd͡ʒiɾo</td>
+                    </tr>
+                    <tr>
+                      <td>44</td>
+                      <td>navel</td>
+                      <td>mũkonyo</td>
+                      <td>mokɔɲɔ</td>
+                    </tr>
+                    <tr>
+                      <td>45</td>
+                      <td>to stand</td>
+                      <td>(kũ)rũgama</td>
+                      <td>koɾoɣama</td>
+                    </tr>
+                    <tr>
+                      <td>46</td>
+                      <td>to bite</td>
+                      <td>(kũ)rũma</td>
+                      <td>koɾoma</td>
+                    </tr>
+                    <tr>
+                      <td>47</td>
+                      <td>back</td>
+                      <td>mũgongo</td>
+                      <td>moɣɔᵑgɔ</td>
+                    </tr>
+                    <tr>
+                      <td>48</td>
+                      <td>wind</td>
+                      <td>rũhuho</td>
+                      <td>ɾohuhɔ</td>
+                    </tr>
+                    <tr>
+                      <td>49</td>
+                      <td>smoke</td>
+                      <td>ndogo</td>
+                      <td>ⁿdɔɣɔ</td>
+                    </tr>
+                    <tr>
+                      <td>50</td>
+                      <td>what?</td>
+                      <td>atĩa</td>
+                      <td>atea</td>
+                    </tr>
+                    <tr>
+                      <td>51</td>
+                      <td>child</td>
+                      <td>mwana</td>
+                      <td>mwana</td>
+                    </tr>
+                    <tr>
+                      <td>52</td>
+                      <td>egg</td>
+                      <td>itumbĩ</td>
+                      <td>ituᵐbe</td>
+                    </tr>
+                    <tr>
+                      <td>53</td>
+                      <td>to give</td>
+                      <td>(kũ)he</td>
+                      <td>(ko)hɛ</td>
+                    </tr>
+                    <tr>
+                      <td>54</td>
+                      <td>new</td>
+                      <td>njerũ</td>
+                      <td>ⁿd͡ʒɛɾo</td>
+                    </tr>
+                    <tr>
+                      <td>55</td>
+                      <td>to burn (intr.)</td>
+                      <td>(kũ)hĩa</td>
+                      <td>(ko)hea</td>
+                    </tr>
+                    <tr>
+                      <td>56a</td>
+                      <td>no</td>
+                      <td>aca</td>
+                      <td>aʃa</td>
+                    </tr>
+                    <tr>
+                      <td>56b</td>
+                      <td>yes</td>
+                      <td>ĩĩ</td>
+                      <td>ee</td>
+                    </tr>
+                    <tr>
+                      <td>57</td>
+                      <td>good</td>
+                      <td>njega</td>
+                      <td>ⁿd͡ʒɛga</td>
+                    </tr>
+                    <tr>
+                      <td>58</td>
+                      <td>to know</td>
+                      <td>(kũ)menya</td>
+                      <td>(ko)mɛɲa</td>
+                    </tr>
+                    <tr>
+                      <td>59</td>
+                      <td>knee</td>
+                      <td>iru</td>
+                      <td>iɾu</td>
+                    </tr>
+                    <tr>
+                      <td>60a</td>
+                      <td>sad</td>
+                      <td>kĩeha</td>
+                      <td>keɛha</td>
+                    </tr>
+                    <tr>
+                      <td>60b</td>
+                      <td>sand</td>
+                      <td>mũthanga</td>
+                      <td>moðaᵑga</td>
+                    </tr>
+                    <tr>
+                      <td>61</td>
+                      <td>to laugh</td>
+                      <td>(gũ)theka</td>
+                      <td>(go)ðɛka</td>
+                    </tr>
+                    <tr>
+                      <td>62</td>
+                      <td>to hear</td>
+                      <td>(kũ)igua</td>
+                      <td>(ko)igua</td>
+                    </tr>
+                    <tr>
+                      <td>63</td>
+                      <td>soil</td>
+                      <td>tĩri</td>
+                      <td>teɾi</td>
+                    </tr>
+                    <tr>
+                      <td>64</td>
+                      <td>leaf</td>
+                      <td>ithangũ</td>
+                      <td>iðaᵑgo</td>
+                    </tr>
+                    <tr>
+                      <td>65</td>
+                      <td>red</td>
+                      <td>ndune</td>
+                      <td>ⁿdunɛ</td>
+                    </tr>
+                    <tr>
+                      <td>66</td>
+                      <td>liver</td>
+                      <td>ini</td>
+                      <td>ini</td>
+                    </tr>
+                    <tr>
+                      <td>67</td>
+                      <td>to hide</td>
+                      <td>(kũ)hitha</td>
+                      <td>(ko)hiða</td>
+                    </tr>
+                    <tr>
+                      <td>68a</td>
+                      <td>skin</td>
+                      <td>ngothi</td>
+                      <td>ᵑgɔði</td>
+                    </tr>
+                    <tr>
+                      <td>68b</td>
+                      <td>hide</td>
+                      <td>rũa</td>
+                      <td>ɾoa</td>
+                    </tr>
+                    <tr>
+                      <td>68c</td>
+                      <td>peel (1)</td>
+                      <td>gĩkoni</td>
+                      <td>gekɔni</td>
+                    </tr>
+                    <tr>
+                      <td>68d</td>
+                      <td>peel (2)</td>
+                      <td>ikoro</td>
+                      <td>ikɔɾɔ</td>
+                    </tr>
+                    <tr>
+                      <td>69a</td>
+                      <td>to suck</td>
+                      <td>(kũ)gucia</td>
+                      <td>(ko)guʃia</td>
+                    </tr>
+                    <tr>
+                      <td>69b</td>
+                      <td>to suck (breastfeed)</td>
+                      <td>(ku)onga</td>
+                      <td>(ku)ɔᵑga</td>
+                    </tr>
+                    <tr>
+                      <td>70</td>
+                      <td>to carry</td>
+                      <td>(gũ)kua</td>
+                      <td>(go)kua</td>
+                    </tr>
+                    <tr>
+                      <td>71</td>
+                      <td>termite, white ant</td>
+                      <td>mũthũa</td>
+                      <td>moðoa</td>
+                    </tr>
+                    <tr>
+                      <td>72</td>
+                      <td>heavy</td>
+                      <td>nditũ</td>
+                      <td>ⁿdito</td>
+                    </tr>
+                    <tr>
+                      <td>73</td>
+                      <td>to take</td>
+                      <td>(ku)oya</td>
+                      <td>(ku)ɔja</td>
+                    </tr>
+                    <tr>
+                      <td>74</td>
+                      <td>old</td>
+                      <td>ngũrũ</td>
+                      <td>ᵑgoɾo</td>
+                    </tr>
+                    <tr>
+                      <td>75</td>
+                      <td>to eat</td>
+                      <td>(kũ)rĩa</td>
+                      <td>(ko)ɾea</td>
+                    </tr>
+                    <tr>
+                      <td>76</td>
+                      <td>thigh</td>
+                      <td>kĩero</td>
+                      <td>keɛɾɔ</td>
+                    </tr>
+                    <tr>
+                      <td>77</td>
+                      <td>thick</td>
+                      <td>ndungu</td>
+                      <td>ⁿduᵑgu</td>
+                    </tr>
+                    <tr>
+                      <td>78</td>
+                      <td>long</td>
+                      <td>ndaihu</td>
+                      <td>ⁿdaihu</td>
+                    </tr>
+                    <tr>
+                      <td>79a</td>
+                      <td>to blow (wind)</td>
+                      <td>(kũ)hurutana</td>
+                      <td>(ko)huɾutana</td>
+                    </tr>
+                    <tr>
+                      <td>79b</td>
+                      <td>to blow (mouth)</td>
+                      <td>(kũ)huha</td>
+                      <td>(ko)huha</td>
+                    </tr>
+                    <tr>
+                      <td>80a</td>
+                      <td>wood (inside)</td>
+                      <td>rũbaũ</td>
+                      <td>ɾo β ao</td>
+                    </tr>
+                    <tr>
+                      <td>80b</td>
+                      <td>wood (outside)</td>
+                      <td>ithirebu</td>
+                      <td>iðiɾɛ β u</td>
+                    </tr>
+                    <tr>
+                      <td>80c</td>
+                      <td>log</td>
+                      <td>mũgogo</td>
+                      <td>mogɔgɔ</td>
+                    </tr>
+                    <tr>
+                      <td>81</td>
+                      <td>to run</td>
+                      <td>(gũ)teng'era</td>
+                      <td>(go)tɛŋɛɾa</td>
+                    </tr>
+                    <tr>
+                      <td>82</td>
+                      <td>to fall</td>
+                      <td>(kũ)gũa</td>
+                      <td>(ko)goa</td>
+                    </tr>
+                    <tr>
+                      <td>83</td>
+                      <td>eye</td>
+                      <td>ritho</td>
+                      <td>ɾiðɔ</td>
+                    </tr>
+                    <tr>
+                      <td>84</td>
+                      <td>ash</td>
+                      <td>mũhu</td>
+                      <td>mohu</td>
+                    </tr>
+                    <tr>
+                      <td>85</td>
+                      <td>tail</td>
+                      <td>mũting'oe</td>
+                      <td>motiŋɔɛ</td>
+                    </tr>
+                    <tr>
+                      <td>86</td>
+                      <td>dog</td>
+                      <td>ngui</td>
+                      <td>ᵑgui</td>
+                    </tr>
+                    <tr>
+                      <td>87a</td>
+                      <td>to cry</td>
+                      <td>(kũ)rĩra</td>
+                      <td>(ko)ɾeɾa</td>
+                    </tr>
+                    <tr>
+                      <td>87b</td>
+                      <td>to weep</td>
+                      <td>(kũ)girĩka</td>
+                      <td>(ko)giɾeka</td>
+                    </tr>
+                    <tr>
+                      <td>88</td>
+                      <td>to tie</td>
+                      <td>(ku)oha</td>
+                      <td>(ku)ɔha</td>
+                    </tr>
+                    <tr>
+                      <td>89a</td>
+                      <td>to see</td>
+                      <td>(ku)ona</td>
+                      <td>(ku)ɔna</td>
+                    </tr>
+                    <tr>
+                      <td>89b</td>
+                      <td>to see (long)</td>
+                      <td>kwĩrorera</td>
+                      <td>kweɾɔɾɛɾa</td>
+                    </tr>
+                    <tr>
+                      <td>90</td>
+                      <td>sweet</td>
+                      <td>camá / camà (taste)</td>
+                      <td>ʃamá / ʃamà</td>
+                    </tr>
+                    <tr>
+                      <td>91</td>
+                      <td>rope</td>
+                      <td>mũkanda</td>
+                      <td>mokaⁿda</td>
+                    </tr>
+                    <tr>
+                      <td>92</td>
+                      <td>shade/shadow</td>
+                      <td>kĩruru</td>
+                      <td>keɾuɾu</td>
+                    </tr>
+                    <tr>
+                      <td>93</td>
+                      <td>bird</td>
+                      <td>nyoni</td>
+                      <td>ɲɔni</td>
+                    </tr>
+                    <tr>
+                      <td>94</td>
+                      <td>salt</td>
+                      <td>cumbĩ</td>
+                      <td>ʃuᵐbe</td>
+                    </tr>
+                    <tr>
+                      <td>95a</td>
+                      <td>small</td>
+                      <td>nini</td>
+                      <td>nini</td>
+                    </tr>
+                    <tr>
+                      <td>95b</td>
+                      <td>short</td>
+                      <td>nguhĩ</td>
+                      <td>ᵑguhe</td>
+                    </tr>
+                    <tr>
+                      <td>96</td>
+                      <td>wide</td>
+                      <td>njariĩ</td>
+                      <td>ⁿd͡ʒaɾie</td>
+                    </tr>
+                    <tr>
+                      <td>97</td>
+                      <td>star</td>
+                      <td>njata</td>
+                      <td>ⁿd͡ʒata</td>
+                    </tr>
+                    <tr>
+                      <td>98</td>
+                      <td>in</td>
+                      <td>Ø</td>
+                      <td>Ø</td>
+                    </tr>
+                    <tr>
+                      <td>99a</td>
+                      <td>hard</td>
+                      <td>nyũmũ</td>
+                      <td>ɲomo</td>
+                    </tr>
+                    <tr>
+                      <td>99b</td>
+                      <td>difficult</td>
+                      <td>nĩhinya</td>
+                      <td>nehiɲa</td>
+                    </tr>
+                    <tr>
+                      <td>100a</td>
+                      <td>to crush (1)</td>
+                      <td>(kũ)hehenja</td>
+                      <td>(ko)hɛhɛⁿd͡ʒa</td>
+                    </tr>
+                    <tr>
+                      <td>100b</td>
+                      <td>to crush (2)</td>
+                      <td>(gũ)thĩa</td>
+                      <td>(go)ðea</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+        </div>
+
+      </article>
+
+    </main>
+
+    <footer class="site-footer" id="site-footer"></footer>
+  </div>
+
+</body>
+
+</html>
