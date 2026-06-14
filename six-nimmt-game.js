@@ -420,7 +420,7 @@ class SixNimmtGame {
         this.resolvingIndex = 0;
         this.state = 'revealed';
         
-        this.logMessage("All cards revealed! Click 'Resolve Card' to place them one by one.");
+        this.logMessage("All cards revealed! Click 'Place Next Card' to place them one by one.");
         this.updateUI(searchAIThoughtReport);
     }
     
@@ -467,7 +467,11 @@ class SixNimmtGame {
             }
             
             this.resolvingIndex++;
-            this.updateUI();
+            if (this.resolvingIndex >= this.playedCardsThisTurn.length) {
+                this.endTurn();
+            } else {
+                this.updateUI();
+            }
         }
     }
     
@@ -493,8 +497,12 @@ class SixNimmtGame {
         
         this.pendingRowTakeIndex = -1;
         this.resolvingIndex++;
-        this.state = 'revealed';
-        this.updateUI();
+        if (this.resolvingIndex >= this.playedCardsThisTurn.length) {
+            this.endTurn();
+        } else {
+            this.state = 'revealed';
+            this.updateUI();
+        }
     }
     
     endTurn() {
@@ -692,7 +700,7 @@ class SixNimmtGame {
             const cardWrapper = document.createElement('div');
             cardWrapper.className = 'played-card-wrapper';
             
-            if (this.state === 'resolving_card' && index === this.resolvingIndex) {
+            if (isRevealed && index === this.resolvingIndex) {
                 cardWrapper.classList.add('currently-resolving');
             }
             
