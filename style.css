@@ -836,7 +836,7 @@ a:focus-visible,
   .bio-section,
   .section-header,
   .links-grid,
-  .reader-intro,
+  .article-header,
   .study-section {
     padding-inline: 16px;
   }
@@ -1199,19 +1199,36 @@ a:focus-visible,
 }
 
 /* ==========================================
-   Interactive Translation Reader Styles
+   Shared Article / Project Header Module
    ========================================== */
-
-.reader-intro {
+.article-header {
   max-width: 800px;
   margin: 0 auto 40px auto;
   text-align: center;
-  font-family: var(--font-serif);
   padding-inline: 24px;
 }
 
-.reader-intro p {
+.article-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+  font-weight: 500;
+}
+
+.article-subtitle {
+  font-family: var(--font-serif);
   font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.article-meta {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--text-muted);
   margin-bottom: 12px;
 }
