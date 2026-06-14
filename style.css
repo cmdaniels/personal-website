@@ -1222,6 +1222,24 @@ a:focus-visible,
   padding-inline: 24px;
 }
 
+.intro-text {
+  max-width: 800px;
+  margin: 0 auto 48px auto;
+  padding-inline: 24px;
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.intro-text p {
+  margin: 0 0 20px 0;
+  text-align: justify;
+}
+
+.intro-text p:last-child {
+  margin-bottom: 0;
+}
+
 .article-title {
   font-family: var(--font-serif);
   font-size: clamp(2.2rem, 5vw, 3rem);
