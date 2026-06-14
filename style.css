@@ -1778,7 +1778,7 @@ a:focus-visible,
   border-bottom: none;
 }
 
-.academic-table tr.section-header td {
+.academic-table tr.table-section-header td {
   font-family: var(--font-serif);
   font-weight: 600;
   font-size: 1rem;
