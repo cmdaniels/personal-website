@@ -1712,7 +1712,8 @@ a:focus-visible,
   text-align: justify;
 }
 
-.academic-article p a {
+.academic-article p a,
+.academic-article li a {
   color: var(--accent-color);
   text-decoration: none;
   font-weight: 500;
@@ -1720,11 +1721,13 @@ a:focus-visible,
   transition: var(--transition);
 }
 
-.academic-article p a:hover {
+.academic-article p a:hover,
+.academic-article li a:hover {
   color: var(--text-color);
   background-color: var(--accent-light);
   border-bottom-color: var(--text-color);
 }
+
 
 .academic-article .article-header p {
   text-align: center;
@@ -2104,4 +2107,48 @@ a:focus-visible,
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* Academic Figures */
+.academic-figures-container {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  align-items: center;
+  margin: 40px auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+.academic-figure {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.academic-figure img {
+  width: 100%;
+  height: auto;
+  border: var(--border-width) solid var(--border-color);
+  background-color: #ffffff;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.academic-table-caption,
+.academic-figure figcaption {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 8px;
+  color: var(--text-muted);
+}
+
+.academic-table-caption {
+  margin-top: -16px;
+}
+
+.academic-table-caption {
+  text-align: center;
+  margin-bottom: 36px;
 }

@@ -31,12 +31,12 @@ const projectsData = [
   },
   {
     "id": "post-date-text",
-    "title": "The Post-date Text",
+    "title": "The Post-Date Text",
     "image": "./images/thumbnails/post-date-text.webp",
     "imageAlt": "Smartphone displaying chat bubbles",
     "description": "A sociolinguistic study analyzing post-date text messages to determine common communicative elements, signs of affection, and how certain gender-specific expressions signal romantic interest.",
     "tags": ["Sociolinguistics", "Computer-Mediated Communication", "Pragmatics"],
-    "link": "./files/PostDateText.pdf",
+    "link": "./post-date-text.html",
     "featured": true
   },
   {
