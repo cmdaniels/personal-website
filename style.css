@@ -160,6 +160,12 @@ em {
   gap: 24px;
 }
 
+.title-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .title-area h1 {
   margin-bottom: 4px;
 }

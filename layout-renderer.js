@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     header.innerHTML = `
       <div class="header-container">
         <div class="title-area">
-          <h1>Cody Daniels</h1>
-          <p class="subtitle">Computational Linguist</p>
+          <a href="./index.html" class="title-link">
+            <h1>Cody Daniels</h1>
+            <p class="subtitle">Computational Linguist</p>
+          </a>
         </div>
         <nav class="nav-links">
           <a href="./index.html" class="${activePage === 'home' ? 'active' : ''}">Home</a>
