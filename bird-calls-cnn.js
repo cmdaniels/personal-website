@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scientific: 'Turdus migratorius',
       audioUrl: './files/audio/robin.wav',
       spectrogramUrl: './files/audio/robin_spec.png',
+      imageUrl: './images/birds/robin.jpg',
       duration: 3.5,
       description: 'A cheerful, warbling song featuring rising and falling pitches.'
     },
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scientific: 'Passerella iliaca',
       audioUrl: './files/audio/sparrow.wav',
       spectrogramUrl: './files/audio/sparrow_spec.png',
+      imageUrl: './images/birds/sparrow.jpg',
       duration: 4.2,
       description: 'A rich, musical song featuring clear, whistling notes followed by short slurs and a final buzz.'
     },
@@ -24,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scientific: 'Poecile rufescens',
       audioUrl: './files/audio/chickadee.wav',
       spectrogramUrl: './files/audio/chickadee_spec.png',
+      imageUrl: './images/birds/chickadee.jpg',
       duration: 2.8,
       description: 'A rapid, buzzy, and husky "chick-a-dee" call.'
     },
@@ -33,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scientific: 'Cyanocitta stelleri',
       audioUrl: './files/audio/jay.wav',
       spectrogramUrl: './files/audio/jay_spec.png',
+      imageUrl: './images/birds/jay.jpg',
       duration: 2.5,
       description: "A harsh, raspy scolding sound."
     },
@@ -42,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scientific: 'Junco hyemalis',
       audioUrl: './files/audio/junco.wav',
       spectrogramUrl: './files/audio/junco_spec.png',
+      imageUrl: './images/birds/junco.jpg',
       duration: 3.0,
       description: 'A fast, ringing trill that lasts around 2 seconds.'
     }
@@ -194,6 +199,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <span class="info-sci">${bird.scientific}</span>
       </div>
       <div class="info-desc">${bird.description}</div>
+      <div class="bird-photo-container">
+        <img class="bird-photo" src="${bird.imageUrl}" alt="${bird.name}" onload="this.classList.add('loaded')">
+      </div>
     `;
   }
 
