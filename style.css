@@ -1703,6 +1703,20 @@ a:focus-visible,
   text-align: justify;
 }
 
+.academic-article p a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1.5px solid var(--accent-color);
+  transition: var(--transition);
+}
+
+.academic-article p a:hover {
+  color: var(--text-color);
+  background-color: var(--accent-light);
+  border-bottom-color: var(--text-color);
+}
+
 .academic-article .article-header p {
   text-align: center;
 }
