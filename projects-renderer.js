@@ -13,21 +13,25 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.classList.remove('cols-3');
   }
 
-  grid.innerHTML = filteredProjects.map(project => `
-    <article class="project-card">
-      <img src="${project.image}" alt="${project.imageAlt}" class="project-image">
-      <div class="project-card-header">
-        <h3>${project.title}</h3>
-      </div>
-      <div class="project-card-body">
-        <p class="project-description">${project.description}</p>
-        <div class="project-tags">
-          ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+  grid.innerHTML = filteredProjects.map(project => {
+    const isExternalOrFile = project.link.startsWith('http') || project.link.endsWith('.pdf') || project.link.includes('/files/');
+    const targetAttr = isExternalOrFile ? ' target="_blank" rel="noopener"' : '';
+    return `
+      <article class="project-card">
+        <img src="${project.image}" alt="${project.imageAlt}" class="project-image">
+        <div class="project-card-header">
+          <h3>${project.title}</h3>
         </div>
-        <a href="${project.link}" target="_blank" rel="noopener" class="project-card-link">View Project ↗</a>
-      </div>
-    </article>
-  `).join('');
+        <div class="project-card-body">
+          <p class="project-description">${project.description}</p>
+          <div class="project-tags">
+            ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+          </div>
+          <a href="${project.link}"${targetAttr} class="project-card-link">View Project ↗</a>
+        </div>
+      </article>
+    `;
+  }).join('');
 
   // Handle touch interactions for mobile/touch screens
   grid.addEventListener('click', (e) => {
