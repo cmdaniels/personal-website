@@ -22,6 +22,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <script defer src="../layout-renderer.js"></script>
+  <script defer src="./post-date-text-interpreter.js"></script>
 </head>
 
 <body>
@@ -322,6 +323,42 @@
           <div class="academic-table-caption">
             Table 2. Gender Differences</div>
 
+        </section>
+
+        <section class="interpreter-section">
+          <h2>Try It Yourself</h2>
+          <p>Paste a post-date text below and select the sender's gender to get a linguistic reading based on the study's findings.</p>
+          <div class="interpreter-card">
+            <div class="interpreter-gender-row">
+              <span class="interpreter-label">Sender's Gender</span>
+              <div class="gender-toggle-group">
+                <button class="gender-toggle-btn active" data-gender="male" id="gender-male">Male</button>
+                <button class="gender-toggle-btn" data-gender="female" id="gender-female">Female</button>
+              </div>
+            </div>
+
+            <div class="interpreter-input-row">
+              <label class="interpreter-label" for="interpreter-input">The Post-Date Text</label>
+              <textarea
+                id="interpreter-input"
+                class="interpreter-textarea"
+                placeholder="Paste the text message here…"
+                rows="4"
+                spellcheck="false"
+              ></textarea>
+              <p class="interpreter-hint">Press <kbd>⌘</kbd><kbd>↵</kbd> to analyze</p>
+            </div>
+
+            <button class="interpreter-analyze-btn" id="analyze-btn">Analyze Message</button>
+
+            <div class="interpreter-result" id="interpreter-result">
+              <div class="verdict-header">
+                <span class="verdict-label">Verdict</span>
+                <h3 class="verdict-title" id="verdict-title"></h3>
+              </div>
+              <p class="verdict-narrative" id="verdict-narrative"></p>
+            </div>
+          </div>
         </section>
 
         <section>
