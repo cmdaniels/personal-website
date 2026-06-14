@@ -7,48 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
       audioUrl: './files/audio/robin.wav',
       spectrogramUrl: './files/audio/robin_spec.png',
       duration: 3.5,
-      description: 'A cheerful, warbling song featuring rising and falling pitches.',
-      annotations: [
-        { time: 0.5, label: 'Introductory warble (3.2 kHz)' },
-        { time: 1.8, label: 'Rising pitch phrase (4.5 kHz)' },
-        { time: 2.9, label: 'Falling pitch tail' }
-      ],
-      drawSpectrogram: (ctx, width, height) => {
-        // Draw background grid
-        drawGrid(ctx, width, height);
-
-        // Draw Robin calls (warbling arched segments)
-        ctx.strokeStyle = '#d65d30';
-        ctx.lineWidth = 6;
-        ctx.lineCap = 'round';
-        ctx.shadowBlur = 12;
-        ctx.shadowColor = '#d65d30';
-
-        // Warble 1
-        ctx.beginPath();
-        ctx.moveTo(width * 0.1, height * 0.6);
-        ctx.bezierCurveTo(width * 0.15, height * 0.5, width * 0.2, height * 0.5, width * 0.25, height * 0.6);
-        ctx.stroke();
-
-        // Warble 2
-        ctx.strokeStyle = '#ff8f5a';
-        ctx.shadowColor = '#ff8f5a';
-        ctx.beginPath();
-        ctx.moveTo(width * 0.35, height * 0.65);
-        ctx.bezierCurveTo(width * 0.42, height * 0.35, width * 0.48, height * 0.35, width * 0.55, height * 0.6);
-        ctx.stroke();
-
-        // Warble 3
-        ctx.strokeStyle = '#d65d30';
-        ctx.shadowColor = '#d65d30';
-        ctx.beginPath();
-        ctx.moveTo(width * 0.65, height * 0.5);
-        ctx.bezierCurveTo(width * 0.7, height * 0.6, width * 0.75, height * 0.6, width * 0.8, height * 0.75);
-        ctx.stroke();
-
-        // Reset shadow
-        ctx.shadowBlur = 0;
-      }
+      description: 'A cheerful, warbling song featuring rising and falling pitches.'
     },
     {
       id: 'sparrow',
@@ -57,70 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       audioUrl: './files/audio/sparrow.wav',
       spectrogramUrl: './files/audio/sparrow_spec.png',
       duration: 4.2,
-      description: 'A rich, musical song featuring clear, whistling notes followed by short slurs and a final buzz.',
-      annotations: [
-        { time: 0.6, label: 'Clear introductory whistles (2.8 kHz)' },
-        { time: 1.8, label: 'Steep frequency sweeps and slurs' },
-        { time: 3.2, label: 'Terminating buzzy notes (4.2 kHz)' }
-      ],
-      drawSpectrogram: (ctx, width, height) => {
-        drawGrid(ctx, width, height);
-
-        ctx.strokeStyle = '#d65d30';
-        ctx.lineWidth = 6;
-        ctx.lineCap = 'round';
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = '#d65d30';
-
-        // Whistle 1 (Intro)
-        ctx.beginPath();
-        ctx.moveTo(width * 0.08, height * 0.6);
-        ctx.bezierCurveTo(width * 0.12, height * 0.52, width * 0.18, height * 0.52, width * 0.22, height * 0.6);
-        ctx.stroke();
-
-        // Whistle 2 (Intro)
-        ctx.beginPath();
-        ctx.moveTo(width * 0.25, height * 0.55);
-        ctx.bezierCurveTo(width * 0.28, height * 0.47, width * 0.32, height * 0.47, width * 0.35, height * 0.55);
-        ctx.stroke();
-
-        // Steep sweeps (slurs)
-        ctx.strokeStyle = '#ff8f5a';
-        ctx.shadowColor = '#ff8f5a';
-        ctx.lineWidth = 4;
-
-        // Sweep 1
-        ctx.beginPath();
-        ctx.moveTo(width * 0.42, height * 0.35);
-        ctx.lineTo(width * 0.48, height * 0.7);
-        ctx.stroke();
-
-        // Sweep 2
-        ctx.beginPath();
-        ctx.moveTo(width * 0.52, height * 0.3);
-        ctx.lineTo(width * 0.58, height * 0.65);
-        ctx.stroke();
-
-        // Final buzz (thick, noisy horizontal bars)
-        ctx.strokeStyle = '#d65d30';
-        ctx.shadowColor = '#d65d30';
-        ctx.lineWidth = 12;
-        ctx.beginPath();
-        ctx.moveTo(width * 0.68, height * 0.5);
-        ctx.lineTo(width * 0.85, height * 0.5);
-        ctx.stroke();
-
-        // Add some high frequency harmonics on top of the buzz
-        ctx.strokeStyle = 'rgba(255, 143, 90, 0.4)';
-        ctx.shadowBlur = 0;
-        ctx.lineWidth = 3;
-        ctx.beginPath();
-        ctx.moveTo(width * 0.68, height * 0.35);
-        ctx.lineTo(width * 0.85, height * 0.35);
-        ctx.stroke();
-
-        ctx.shadowBlur = 0;
-      }
+      description: 'A rich, musical song featuring clear, whistling notes followed by short slurs and a final buzz.'
     },
     {
       id: 'chickadee',
@@ -129,58 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       audioUrl: './files/audio/chickadee.wav',
       spectrogramUrl: './files/audio/chickadee_spec.png',
       duration: 2.8,
-      description: 'A rapid, buzzy, and husky "chick-a-dee" call.',
-      annotations: [
-        { time: 0.4, label: '"Chick" raspy note (5.0 kHz)' },
-        { time: 1.2, label: '"A" transition sweep' },
-        { time: 2.0, label: '"Dee-dee-dee" rapid trill' }
-      ],
-      drawSpectrogram: (ctx, width, height) => {
-        drawGrid(ctx, width, height);
-
-        // "Chick" notes (thin vertical spikes)
-        ctx.strokeStyle = '#d65d30';
-        ctx.shadowBlur = 6;
-        ctx.shadowColor = '#d65d30';
-        ctx.lineWidth = 3;
-
-        const drawSpike = (x) => {
-          ctx.beginPath();
-          ctx.moveTo(x, height * 0.2);
-          ctx.lineTo(x, height * 0.7);
-          ctx.stroke();
-        };
-
-        drawSpike(width * 0.08);
-        drawSpike(width * 0.12);
-        drawSpike(width * 0.16);
-
-        // "A" transition sweep (short diagonal line)
-        ctx.strokeStyle = '#ff8f5a';
-        ctx.shadowColor = '#ff8f5a';
-        ctx.lineWidth = 4;
-        ctx.beginPath();
-        ctx.moveTo(width * 0.3, height * 0.65);
-        ctx.lineTo(width * 0.42, height * 0.35);
-        ctx.stroke();
-
-        // "Dee-dee-dee" trill (horizontal blocks)
-        ctx.fillStyle = '#d65d30';
-        ctx.shadowColor = '#d65d30';
-        ctx.shadowBlur = 10;
-
-        const drawDee = (startX) => {
-          ctx.fillRect(startX, height * 0.4, width * 0.06, height * 0.1);
-          ctx.fillRect(startX, height * 0.55, width * 0.06, height * 0.1);
-        };
-
-        drawDee(width * 0.52);
-        drawDee(width * 0.62);
-        drawDee(width * 0.72);
-        drawDee(width * 0.82);
-
-        ctx.shadowBlur = 0;
-      }
+      description: 'A rapid, buzzy, and husky "chick-a-dee" call.'
     },
     {
       id: 'jay',
@@ -189,42 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       audioUrl: './files/audio/jay.wav',
       spectrogramUrl: './files/audio/jay_spec.png',
       duration: 2.5,
-      description: "A harsh, raspy scolding sound.",
-      annotations: [
-        { time: 0.4, label: 'Harsh wideband scold (1.5 - 7 kHz)' },
-        { time: 1.2, label: 'Vertical harmonic scratch patterns' },
-        { time: 2.0, label: 'Terminating raspy burst' }
-      ],
-      drawSpectrogram: (ctx, width, height) => {
-        drawGrid(ctx, width, height);
-
-        // Wideband scratchy blocks
-        ctx.shadowBlur = 4;
-        ctx.shadowColor = '#d65d30';
-
-        const drawScold = (startX, endX) => {
-          for (let x = startX; x < endX; x += 4) {
-            ctx.strokeStyle = Math.random() > 0.3 ? '#d65d30' : '#ff8f5a';
-            ctx.lineWidth = 1.5 + Math.random() * 2;
-
-            // Draw multiple short fragments vertically to simulate noise
-            for (let y = height * 0.15; y < height * 0.85; y += 15) {
-              if (Math.random() > 0.25) {
-                ctx.beginPath();
-                ctx.moveTo(x, y);
-                ctx.lineTo(x, y + 10 + Math.random() * 8);
-                ctx.stroke();
-              }
-            }
-          }
-        };
-
-        drawScold(width * 0.1, width * 0.25);
-        drawScold(width * 0.4, width * 0.55);
-        drawScold(width * 0.7, width * 0.85);
-
-        ctx.shadowBlur = 0;
-      }
+      description: "A harsh, raspy scolding sound."
     },
     {
       id: 'junco',
@@ -233,32 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       audioUrl: './files/audio/junco.wav',
       spectrogramUrl: './files/audio/junco_spec.png',
       duration: 3.0,
-      description: 'A fast, ringing trill that lasts around 2 seconds.',
-      annotations: [
-        { time: 0.3, label: 'Rapid trill onset' },
-        { time: 1.5, label: 'Repetitive high-speed pulses (4.5 kHz)' },
-        { time: 2.6, label: 'Gradual decay of trill intensity' }
-      ],
-      drawSpectrogram: (ctx, width, height) => {
-        drawGrid(ctx, width, height);
-
-        ctx.strokeStyle = '#ff8f5a';
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = '#ff8f5a';
-        ctx.lineWidth = 3;
-
-        // Draw a series of diagonal downward-sweeping elements (rapid pulses)
-        const pulseStart = width * 0.15;
-        const pulseEnd = width * 0.85;
-        for (let x = pulseStart; x < pulseEnd; x += 18) {
-          ctx.beginPath();
-          ctx.moveTo(x, height * 0.4);
-          ctx.lineTo(x + 8, height * 0.65);
-          ctx.stroke();
-        }
-
-        ctx.shadowBlur = 0;
-      }
+      description: 'A fast, ringing trill that lasts around 2 seconds.'
     }
   ];
 
@@ -271,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const playIcon = document.getElementById('play-icon');
   const pauseIcon = document.getElementById('pause-icon');
   const playhead = document.getElementById('playhead');
-  const annotationEl = document.getElementById('spectrogram-annotation');
   const tabsContainer = document.getElementById('bird-tabs');
   const infoPanel = document.getElementById('info-panel');
 
@@ -389,10 +173,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderActiveProceduralSpectrogram() {
-    const activeBird = birds[activeBirdIndex];
-    if (activeBird && activeBird.drawSpectrogram) {
-      activeBird.drawSpectrogram(ctx, canvas.width, canvas.height);
-    }
+    drawGrid(ctx, canvas.width, canvas.height);
+    ctx.fillStyle = 'rgba(245, 237, 224, 0.4)';
+    ctx.font = '13px "Inter", sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Spectrogram image failed to load', canvas.width / 2, canvas.height / 2);
+    ctx.textAlign = 'left';
   }
 
   function renderActiveSpectrogram() {
@@ -444,7 +230,6 @@ document.addEventListener('DOMContentLoaded', () => {
     playIcon.style.display = 'inline';
     pauseIcon.style.display = 'none';
     playhead.style.display = 'none';
-    annotationEl.style.opacity = 0;
 
     // Load new audio source
     audio.src = birds[activeBirdIndex].audioUrl;
@@ -465,7 +250,6 @@ document.addEventListener('DOMContentLoaded', () => {
         pauseIcon.style.display = 'none';
         playhead.style.display = 'none';
         playhead.style.left = '0%';
-        annotationEl.classList.remove('active');
         if (animationId) {
           cancelAnimationFrame(animationId);
           animationId = null;
@@ -477,35 +261,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const percent = Math.min(progress * 100, 100);
 
       playhead.style.left = `${percent}%`;
-
-      // Check for active annotations
-      const currentTime = audio.currentTime;
-      let activeAnnotation = null;
-
-      for (const ann of activeBird.annotations) {
-        // Annotation is active within 0.8 seconds of its trigger time
-        if (currentTime >= ann.time && currentTime <= ann.time + 0.8) {
-          activeAnnotation = ann;
-          break;
-        }
-      }
-
-      if (activeAnnotation) {
-        annotationEl.textContent = activeAnnotation.label;
-        // Position annotation card above playhead (centered)
-        const visualizerWidth = document.getElementById('visualizer-box').offsetWidth;
-        let leftPos = (activeAnnotation.time / duration) * visualizerWidth - 90;
-
-        // Boundaries checks
-        if (leftPos < 10) leftPos = 10;
-        if (leftPos > visualizerWidth - 190) leftPos = visualizerWidth - 190;
-
-        annotationEl.style.left = `${leftPos}px`;
-        annotationEl.style.top = `15px`;
-        annotationEl.classList.add('active');
-      } else {
-        annotationEl.classList.remove('active');
-      }
 
       animationId = requestAnimationFrame(updatePlayhead);
     }
@@ -572,37 +327,11 @@ document.addEventListener('DOMContentLoaded', () => {
         isSimulating = false;
         playhead.style.left = '0%';
         playhead.style.display = 'none';
-        annotationEl.classList.remove('active');
         playBtn.querySelector('span').textContent = 'Listen to Song';
         playIcon.style.display = 'inline';
         pauseIcon.style.display = 'none';
       } else {
         playhead.style.left = `${progress * 100}%`;
-
-        // Annotation logic
-        const currentTime = (elapsed / 1000);
-        const activeBird = birds[activeBirdIndex];
-        let activeAnnotation = null;
-        for (const ann of activeBird.annotations) {
-          if (currentTime >= ann.time && currentTime <= ann.time + 0.8) {
-            activeAnnotation = ann;
-            break;
-          }
-        }
-
-        if (activeAnnotation) {
-          annotationEl.textContent = activeAnnotation.label;
-          const visualizerWidth = document.getElementById('visualizer-box').offsetWidth;
-          let leftPos = (activeAnnotation.time / activeBird.duration) * visualizerWidth - 90;
-          if (leftPos < 10) leftPos = 10;
-          if (leftPos > visualizerWidth - 190) leftPos = visualizerWidth - 190;
-          annotationEl.style.left = `${leftPos}px`;
-          annotationEl.style.top = `15px`;
-          annotationEl.classList.add('active');
-        } else {
-          annotationEl.classList.remove('active');
-        }
-
         requestAnimationFrame(step);
       }
     }
@@ -616,7 +345,6 @@ document.addEventListener('DOMContentLoaded', () => {
     pauseIcon.style.display = 'none';
     playhead.style.display = 'none';
     playhead.style.left = '0%';
-    annotationEl.classList.remove('active');
     if (animationId) {
       cancelAnimationFrame(animationId);
     }
