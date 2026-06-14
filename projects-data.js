@@ -6,7 +6,7 @@ const projectsData = [
     "imageAlt": "Hand holding numbered playing cards on table",
     "description": "Developed a simulator environment and a Monte Carlo minimax search AI agent that consistently outperformed DQN and heuristic models in the card game \"6 Nimmt!\"",
     "tags": ["Artificial Intelligence", "Monte Carlo", "Python"],
-    "link": "./files/6 nimmt.pdf",
+    "link": "./six-nimmt.html",
     "featured": true
   },
   {
