@@ -1331,17 +1331,25 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Automatically fall back to interleaved/single column on small width screens
-  function handleResize() {
+  let wasDesktop = window.innerWidth > 900;
+
+  function handleResize(isInitial = false) {
     const width = window.innerWidth;
-    if (width <= 900 && currentMode === 'side') {
+    const isDesktop = width > 900;
+
+    // Only fall back to interleaved if it's the initial load on mobile
+    // or the window size transitioned from desktop to mobile.
+    if (currentMode === 'side' && ((isInitial && !isDesktop) || (wasDesktop && !isDesktop))) {
       btnInterleaved.click();
     }
+
+    wasDesktop = isDesktop;
   }
 
-  window.addEventListener('resize', handleResize);
+  window.addEventListener('resize', () => handleResize(false));
 
   // Initialize
   renderFootnotes();
   renderStory();
-  handleResize();
+  handleResize(true);
 });
