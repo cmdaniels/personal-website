@@ -6,7 +6,7 @@ const projectsData = [
     "imageAlt": "Hand holding numbered playing cards on table",
     "description": "Developed a simulator environment and a Monte Carlo minimax search AI agent that consistently outperformed DQN and heuristic models in the card game \"6 Nimmt!\"",
     "tags": ["Artificial Intelligence", "Monte Carlo", "Python"],
-    "link": "./six-nimmt.html",
+    "link": "./projects/six-nimmt.html",
     "featured": true
   },
   {
@@ -16,7 +16,7 @@ const projectsData = [
     "imageAlt": "Old wooden timber houses street in historical Rauma town",
     "description": "Literary translation of Frans Hjalmar Nortamo's short story 'Antonim bäev' from the collection <em>Raumlaissi jaarituksi</em>.",
     "tags": ["Translation", "Linguistics", "Rauma"],
-    "link": "./raumlaissi-jaarituksi.html",
+    "link": "./projects/raumlaissi-jaarituksi.html",
     "featured": true
   },
   {
@@ -26,7 +26,7 @@ const projectsData = [
     "imageAlt": "Colorful wild songbird singing on a branch in a forest",
     "description": "Explored deep learning architectures (Transformers and CNNs) for bird song classification, achieving state-of-the-art accuracy with a fine-tuned VGG-11 model.",
     "tags": ["Deep Learning", "Audio"],
-    "link": "./bird-calls-cnn.html",
+    "link": "./projects/bird-calls-cnn.html",
     "featured": true
   },
   {
@@ -36,7 +36,7 @@ const projectsData = [
     "imageAlt": "Smartphone displaying chat bubbles",
     "description": "A sociolinguistic study analyzing post-date text messages to determine common communicative elements, signs of affection, and how certain gender-specific expressions signal romantic interest.",
     "tags": ["Sociolinguistics", "Computer-Mediated Communication", "Pragmatics"],
-    "link": "./post-date-text.html",
+    "link": "./projects/post-date-text.html",
     "featured": true
   },
   {

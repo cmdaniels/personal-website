@@ -3,18 +3,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('site-header');
   if (header) {
     const activePage = header.getAttribute('data-active');
+    const isSubdirectory = window.location.pathname.includes('/projects/');
+    const prefix = isSubdirectory ? '../' : './';
     header.innerHTML = `
       <div class="header-container">
         <div class="title-area">
-          <a href="./index.html" class="title-link">
+          <a href="${prefix}index.html" class="title-link">
             <h1>Cody Daniels</h1>
             <p class="subtitle">Computational Linguist</p>
           </a>
         </div>
         <nav class="nav-links">
-          <a href="./index.html" class="${activePage === 'home' ? 'active' : ''}">Home</a>
-          <a href="./projects.html" class="${activePage === 'projects' ? 'active' : ''}">Projects</a>
-          <a href="./cv.html" class="${activePage === 'cv' ? 'active' : ''}">CV</a>
+          <a href="${prefix}index.html" class="${activePage === 'home' ? 'active' : ''}">Home</a>
+          <a href="${prefix}projects.html" class="${activePage === 'projects' ? 'active' : ''}">Projects</a>
+          <a href="${prefix}cv.html" class="${activePage === 'cv' ? 'active' : ''}">CV</a>
+
           <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
             <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
