@@ -465,9 +465,8 @@
 
     /* Hand area container */
     .hand-area-card {
-      margin-top: 32px;
       border: var(--border-width) solid var(--border-color);
-      padding: 24px;
+      padding: 20px;
     }
 
     .hand-cards-flex {
@@ -507,93 +506,7 @@
       font-weight: bold;
     }
 
-    /* AI Thought dashboard styling */
-    .ai-thought-panel {
-      min-height: 200px;
-    }
 
-    .thought-report-header {
-      font-family: var(--font-sans);
-      font-size: 0.85rem;
-      margin-bottom: 16px;
-    }
-
-    .thought-report-header h3 {
-      font-family: var(--font-sans);
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .thought-report-header p {
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      margin: 0;
-    }
-
-    .thought-metrics-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .thought-card-metric {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-family: var(--font-sans);
-      font-size: 0.85rem;
-      padding: 8px;
-      border: 1px solid transparent;
-      background-color: var(--bg-hover);
-    }
-
-    .thought-card-metric.metric-chosen {
-      border-color: var(--accent-color);
-      background-color: var(--accent-light);
-    }
-
-    .metric-card-number {
-      font-weight: 700;
-      min-width: 60px;
-    }
-
-    .metric-bulls {
-      font-weight: 400;
-      font-size: 0.7rem;
-      color: var(--text-muted);
-    }
-
-    .metric-bar-container {
-      flex-grow: 1;
-      height: 8px;
-      background-color: rgba(0, 0, 0, 0.1);
-      border-radius: 4px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .metric-bar {
-      height: 100%;
-      border-radius: 4px;
-      transition: width 0.5s ease;
-    }
-
-    .metric-value-report {
-      font-size: 0.8rem;
-      min-width: 140px;
-      text-align: right;
-    }
-
-    .chosen-indicator-tag {
-      background-color: var(--accent-color);
-      color: var(--bg-color);
-      font-size: 0.6rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      padding: 1px 4px;
-      margin-left: 6px;
-    }
 
     /* Agent badging */
     .agent-badge {
@@ -938,6 +851,14 @@
                 </div>
               </div>
 
+              <!-- Player Hand inside Board Column for easy reach without scrolling -->
+              <div class="panel-card hand-area-card">
+                <div class="panel-card-title" style="margin-bottom: 8px;">Your Hand (Click a card to select)</div>
+                <div id="hand-container" class="hand-cards-flex">
+                  <!-- User hand cards -->
+                </div>
+              </div>
+
             </div>
 
             <!-- Right Column: Scores, Logs, and AI Thoughts -->
@@ -962,13 +883,6 @@
                 </div>
               </div>
 
-              <div class="panel-card ai-thought-panel">
-                <div class="panel-card-title">AI Brain thought process</div>
-                <div id="ai-thought-content">
-                  <!-- Live expected penalties graphs -->
-                </div>
-              </div>
-
               <div class="panel-card game-log-panel">
                 <div class="panel-card-title">Game Action Logs</div>
                 <div id="game-log-content" class="log-content">
@@ -978,13 +892,7 @@
 
             </div>
 
-            <!-- Bottom Span: Player Hand -->
-            <div class="panel-card hand-area-card" style="grid-column: 1 / -1;">
-              <div class="panel-card-title" style="margin-bottom: 8px;">Your Hand (Click a card to select)</div>
-              <div id="hand-container" class="hand-cards-flex">
-                <!-- User hand cards -->
-              </div>
-            </div>
+
 
           </div>
         </section>
