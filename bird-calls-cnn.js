@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'robin',
       name: 'American Robin',
       scientific: 'Turdus migratorius',
-      audioUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Turdus_migratorius_-_American_Robin_XC702113.mp3',
+      audioUrl: './files/audio/robin.mp3',
       duration: 3.5,
       description: 'A cheerful, warbling song featuring rising and falling pitches. The CNN model uses the distinct silent gaps and rhythmic pitch fluctuations in the 2.5–4.5 kHz range of the spectrogram to identify this species.',
       annotations: [
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'sparrow',
       name: 'Song Sparrow',
       scientific: 'Melospiza melodia',
-      audioUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Melospiza_melodia_-_Song_Sparrow_XC737877.mp3',
+      audioUrl: './files/audio/sparrow.mp3',
       duration: 4.2,
       description: 'A complex song starting with deliberate, sweet notes, followed by a dense, rapid high-frequency trill. The CNN easily detects the transition from rhythmic pulses to the sustained grid-like texture of the trill block.',
       annotations: [
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'chickadee',
       name: 'Black-capped Chickadee',
       scientific: 'Poecile atricapillus',
-      audioUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/14/Poecile_atricapillus_-_Black-capped_Chickadee_XC734731.mp3',
+      audioUrl: './files/audio/chickadee.mp3',
       duration: 2.8,
       description: 'A simple, pure-tone whistle consisting of a high-pitched whistle followed by a slightly lower-pitched whistle (the "fee-bee" song). The spectrogram shows two horizontal lines with very low noise, making it highly recognizable.',
       annotations: [
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'jay',
       name: "Steller's Jay",
       scientific: 'Cyanocitta stelleri',
-      audioUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b5/Cyanocitta_stelleri_-_Steller%27s_Jay_XC599298.mp3',
+      audioUrl: './files/audio/jay.mp3',
       duration: 2.5,
       description: "A harsh, raspy scolding sound. The spectrogram exhibits vertical bands of wideband noise extending across a wide frequency range (1 kHz to 8 kHz) with prominent harmonics, typical of corvid calls.",
       annotations: [
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'junco',
       name: 'Dark-eyed Junco',
       scientific: 'Junco hyemalis',
-      audioUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Junco_hyemalis_-_Dark-eyed_Junco_XC621217.mp3',
+      audioUrl: './files/audio/junco.mp3',
       duration: 3.0,
       description: 'A fast, ringing trill that lasts around 2 seconds. The spectrogram displays a rapid sequence of identical, closely-spaced vertical sweeps between 3.8 kHz and 5.8 kHz. The CNN excels at detecting this high-density texture.',
       annotations: [
@@ -330,8 +330,25 @@ document.addEventListener('DOMContentLoaded', () => {
   function updatePlayhead() {
     if (!audio.paused) {
       const activeBird = birds[activeBirdIndex];
-      // Fallback duration if audio.duration isn't loaded yet
-      const duration = audio.duration || activeBird.duration;
+      const duration = activeBird.duration;
+
+      // Stop playback when reaching the end of the visualizer duration
+      if (audio.currentTime >= duration) {
+        audio.pause();
+        audio.currentTime = 0;
+        playBtn.querySelector('span').textContent = 'Listen to Song';
+        playIcon.style.display = 'inline';
+        pauseIcon.style.display = 'none';
+        playhead.style.display = 'none';
+        playhead.style.left = '0%';
+        annotationEl.classList.remove('active');
+        if (animationId) {
+          cancelAnimationFrame(animationId);
+          animationId = null;
+        }
+        return;
+      }
+
       const progress = audio.currentTime / duration;
       const percent = Math.min(progress * 100, 100);
 
@@ -342,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let activeAnnotation = null;
 
       for (const ann of activeBird.annotations) {
-        // Annotation is active within 0.6 seconds of its trigger time
+        // Annotation is active within 0.8 seconds of its trigger time
         if (currentTime >= ann.time && currentTime <= ann.time + 0.8) {
           activeAnnotation = ann;
           break;
