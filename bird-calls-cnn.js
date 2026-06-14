@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'American Robin',
       scientific: 'Turdus migratorius',
       audioUrl: './files/audio/robin.wav',
+      spectrogramUrl: './files/audio/robin_spec.png',
       duration: 3.5,
       description: 'A cheerful, warbling song featuring rising and falling pitches.',
       annotations: [
@@ -54,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Fox Sparrow',
       scientific: 'Passerella iliaca',
       audioUrl: './files/audio/sparrow.wav',
+      spectrogramUrl: './files/audio/sparrow_spec.png',
       duration: 4.2,
       description: 'A rich, musical song featuring clear, whistling notes followed by short slurs and a final buzz.',
       annotations: [
@@ -125,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Chestnut-backed Chickadee',
       scientific: 'Poecile rufescens',
       audioUrl: './files/audio/chickadee.wav',
+      spectrogramUrl: './files/audio/chickadee_spec.png',
       duration: 2.8,
       description: 'A rapid, buzzy, and husky "chick-a-dee" call.',
       annotations: [
@@ -184,6 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: "Steller's Jay",
       scientific: 'Cyanocitta stelleri',
       audioUrl: './files/audio/jay.wav',
+      spectrogramUrl: './files/audio/jay_spec.png',
       duration: 2.5,
       description: "A harsh, raspy scolding sound.",
       annotations: [
@@ -227,6 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Dark-eyed Junco',
       scientific: 'Junco hyemalis',
       audioUrl: './files/audio/junco.wav',
+      spectrogramUrl: './files/audio/junco_spec.png',
       duration: 3.0,
       description: 'A fast, ringing trill that lasts around 2 seconds.',
       annotations: [
@@ -270,14 +275,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const tabsContainer = document.getElementById('bird-tabs');
   const infoPanel = document.getElementById('info-panel');
 
+  // Cache for loaded spectrogram images
+  const spectrogramImageCache = {};
+
   // Set logical size for canvas to ensure sharpness
   function resizeCanvas() {
     canvas.width = 800;
     canvas.height = 250;
-    renderActiveSpectrogram();
+    const activeBird = birds[activeBirdIndex];
+    loadAndRenderSpectrogram(activeBird);
   }
 
-  // Draw background grid lines
+  // Draw background grid lines (used for fallback procedural drawing)
   function drawGrid(ctx, width, height) {
     ctx.fillStyle = '#0c0a08';
     ctx.fillRect(0, 0, width, height);
@@ -314,11 +323,81 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function renderActiveSpectrogram() {
+  function loadAndRenderSpectrogram(bird) {
+    if (spectrogramImageCache[bird.id]) {
+      drawSpectrogramImage(spectrogramImageCache[bird.id]);
+      return;
+    }
+
+    // Show loading state
+    ctx.fillStyle = '#0c0a08';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.fillStyle = 'rgba(245, 237, 224, 0.5)';
+    ctx.font = '13px "Inter", sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Loading spectrogram...', canvas.width / 2, canvas.height / 2);
+    ctx.textAlign = 'left';
+
+    const img = new Image();
+    img.onload = () => {
+      spectrogramImageCache[bird.id] = img;
+      drawSpectrogramImage(img);
+    };
+    img.onerror = (err) => {
+      console.warn('Failed to load static spectrogram image, falling back to procedural:', err);
+      renderActiveProceduralSpectrogram();
+    };
+    img.src = bird.spectrogramUrl;
+  }
+
+  function drawSpectrogramImage(img) {
+    const W = canvas.width;
+    const H = canvas.height;
+    ctx.drawImage(img, 0, 0, W, H);
+    drawSpectrogramOverlay(W, H);
+  }
+
+  function drawSpectrogramOverlay(width, height) {
+    ctx.strokeStyle = 'rgba(245, 237, 224, 0.08)';
+    ctx.lineWidth = 1;
+    
+    const labels = ['8 kHz', '6 kHz', '4 kHz', '2 kHz'];
+    for (let i = 1; i <= 4; i++) {
+      const y = (height / 5) * i;
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(width, y);
+      ctx.stroke();
+
+      ctx.fillStyle = 'rgba(245, 237, 224, 0.4)';
+      ctx.font = '10px "Inter", sans-serif';
+      ctx.fillText(labels[i - 1], 15, y - 6);
+    }
+    
+    for (let i = 1; i <= 4; i++) {
+      const x = (width / 5) * i;
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, height);
+      ctx.stroke();
+
+      ctx.fillStyle = 'rgba(245, 237, 224, 0.4)';
+      ctx.font = '10px "Inter", sans-serif';
+      ctx.fillText(`${i}s`, x + 6, height - 10);
+    }
+  }
+
+  function renderActiveProceduralSpectrogram() {
     const activeBird = birds[activeBirdIndex];
     if (activeBird && activeBird.drawSpectrogram) {
       activeBird.drawSpectrogram(ctx, canvas.width, canvas.height);
     }
+  }
+
+  function renderActiveSpectrogram() {
+    const activeBird = birds[activeBirdIndex];
+    loadAndRenderSpectrogram(activeBird);
   }
 
   function updateInfoPanel() {
