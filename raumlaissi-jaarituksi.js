@@ -1027,7 +1027,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       container.innerHTML = `
         <div class="reader-header-row">
-          <div class="text-column-header">Rauma Dialect (Original)</div>
+          <div class="text-column-header">Rauman Giäl (Original)</div>
           <div class="text-column-header">English Translation</div>
         </div>
         ${alignedStoryData.map(para => `
@@ -1081,7 +1081,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (activeLang === 'rauma') {
         container.innerHTML = `
           <div class="text-column">
-            <h3>Rauma Dialect (Original)</h3>
+            <h3>Rauman Giäl (Original)</h3>
             ${alignedStoryData.map(para => `
               <div class="paragraph-block">
                 ${para.blocks.map(block => `
@@ -1170,7 +1170,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const tooltip = document.createElement('div');
       tooltip.className = 'gloss-tooltip';
       tooltip.innerHTML = `
-        <div class="tooltip-title">Dialect Gloss</div>
+        <div class="tooltip-title">Gloss</div>
         <div class="tooltip-line"><strong>Finnish:</strong> ${fin}</div>
         <div class="tooltip-line"><strong>English:</strong> ${eng}</div>
       `;
@@ -1213,7 +1213,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const tooltip = document.createElement('div');
       tooltip.className = 'gloss-tooltip';
       tooltip.innerHTML = `
-        <div class="tooltip-title">Dialect Gloss</div>
+        <div class="tooltip-title">Gloss</div>
         <div class="tooltip-line"><strong>Finnish:</strong> ${fin}</div>
         <div class="tooltip-line"><strong>English:</strong> ${eng}</div>
       `;

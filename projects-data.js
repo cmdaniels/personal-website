@@ -1,7 +1,7 @@
 const projectsData = [
   {
     "id": "six-nimmt-ai",
-    "title": "Beating \"6 Nimmt!\" with Monte Carlo Search",
+    "title": "Beating \"6 Nimmt!\" with Monte Carlo Minimax Search",
     "image": "./images/thumbnails/six-nimmt-ai.webp",
     "imageAlt": "Hand holding numbered playing cards on table",
     "description": "Developed a simulator environment and a Monte Carlo minimax search AI agent that consistently outperformed DQN and heuristic models in the card game \"6 Nimmt!\"",
@@ -15,7 +15,7 @@ const projectsData = [
     "image": "./images/thumbnails/rauma-jaaritus-translation.webp",
     "imageAlt": "Old wooden timber houses street in historical Rauma town",
     "description": "Literary translation of Frans Hjalmar Nortamo's short story 'Antonim bäev' from the collection <em>Raumlaissi jaarituksi</em>.",
-    "tags": ["Translation", "Linguistics", "Rauma Dialect"],
+    "tags": ["Translation", "Linguistics", "Rauma"],
     "link": "./raumlaissi-jaarituksi.html",
     "featured": true
   },
@@ -54,7 +54,7 @@ const projectsData = [
     "title": "Finnish to Rauma NMT",
     "image": "./images/thumbnails/rauma-translator.webp",
     "imageAlt": "Multilingual dictionary pages detailing linguistic translations",
-    "description": "A corpus and neural machine translator from standard written Finnish to Rauman Giäl dialect.",
+    "description": "A corpus and neural machine translator from standard written Finnish to Rauman Giäl.",
     "tags": ["Machine Translation", "NLP"],
     "link": "./files/Masiingäänttär.pdf",
     "featured": true
@@ -65,7 +65,7 @@ const projectsData = [
     "image": "./images/thumbnails/conways-game-of-life.webp",
     "imageAlt": "Abstract high-tech cellular pixel grid pattern",
     "description": "An interactive simulation of John Horton Conway's cellular automaton, implemented in React.",
-    "tags": ["React", "Interactivity"],
+    "tags": ["React", "Automata"],
     "link": "https://codepen.io/cmdaniels/full/wGYmBm/",
     "featured": true
   },
@@ -84,7 +84,7 @@ const projectsData = [
     "title": "Finnish to Rauma FST",
     "image": "./images/thumbnails/finnish-rauma-fst.webp",
     "imageAlt": "Code editor showing XFST rules and generated morphological tags",
-    "description": "A finite-state transducer built with XFST rules that transforms standard Finnish surface forms into the Rauma dialect.",
+    "description": "A finite-state transducer built with XFST rules that transforms standard Finnish surface forms into Rauma Giäl.",
     "tags": ["Computational Linguistics", "FST", "Machine Translation"],
     "link": "./files/Finnish2RaumaFST.pdf",
     "featured": false
