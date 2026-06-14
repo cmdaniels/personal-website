@@ -10,6 +10,16 @@ const projectsData = [
     "featured": true
   },
   {
+    "id": "rauma-jaaritus-translation",
+    "title": "<em>Raumlaissi jaarituksi</em>",
+    "image": "./images/thumbnails/rauma-jaaritus-translation.webp",
+    "imageAlt": "Old wooden timber houses street in historical Rauma town",
+    "description": "Literary translation of Frans Hjalmar Nortamo's short story 'Antonim bäev' from the collection <em>Raumlaissi jaarituksi</em>.",
+    "tags": ["Translation", "Linguistics", "Rauma Dialect"],
+    "link": "./raumlaissi-jaarituksi.html",
+    "featured": true
+  },
+  {
     "id": "bird-calls-cnn",
     "title": "CNN for Identifying Bird Calls",
     "image": "./images/thumbnails/bird-calls-cnn.webp",
@@ -67,16 +77,6 @@ const projectsData = [
     "description": "Documented the grammatical structures of Kikuyu with a native consultant.",
     "tags": ["Fieldwork", "IPA", "Morphosyntax"],
     "link": "./files/Field Notebook.pdf",
-    "featured": true
-  },
-  {
-    "id": "rauma-jaaritus-translation",
-    "title": "<em>Raumlaissi jaarituksi</em>",
-    "image": "./images/thumbnails/rauma-jaaritus-translation.webp",
-    "imageAlt": "Old wooden timber houses street in historical Rauma town",
-    "description": "Literary translation of Frans Hjalmar Nortamo's short story 'Antonim bäev' from the collection <em>Raumlaissi jaarituksi</em>.",
-    "tags": ["Translation", "Linguistics", "Rauma Dialect"],
-    "link": "./raumlaissi-jaarituksi.html",
     "featured": true
   },
   {
