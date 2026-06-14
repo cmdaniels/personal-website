@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'robin',
       name: 'American Robin',
       scientific: 'Turdus migratorius',
-      audioUrl: './files/audio/robin.mp3',
+      audioUrl: './files/audio/robin.wav',
       duration: 3.5,
-      description: 'A cheerful, warbling song featuring rising and falling pitches. The CNN model uses the distinct silent gaps and rhythmic pitch fluctuations in the 2.5–4.5 kHz range of the spectrogram to identify this species.',
+      description: 'A cheerful, warbling song featuring rising and falling pitches.',
       annotations: [
         { time: 0.5, label: 'Introductory warble (3.2 kHz)' },
         { time: 1.8, label: 'Rising pitch phrase (4.5 kHz)' },
@@ -51,85 +51,130 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: 'sparrow',
-      name: 'Song Sparrow',
-      scientific: 'Melospiza melodia',
-      audioUrl: './files/audio/sparrow.mp3',
+      name: 'Fox Sparrow',
+      scientific: 'Passerella iliaca',
+      audioUrl: './files/audio/sparrow.wav',
       duration: 4.2,
-      description: 'A complex song starting with deliberate, sweet notes, followed by a dense, rapid high-frequency trill. The CNN easily detects the transition from rhythmic pulses to the sustained grid-like texture of the trill block.',
+      description: 'A rich, musical song featuring clear, whistling notes followed by short slurs and a final buzz.',
       annotations: [
-        { time: 0.6, label: 'Introductory notes (3.0 kHz)' },
-        { time: 2.0, label: 'Transition to rapid trill' },
-        { time: 3.2, label: 'High-frequency trill (5.5 kHz)' }
+        { time: 0.6, label: 'Clear introductory whistles (2.8 kHz)' },
+        { time: 1.8, label: 'Steep frequency sweeps and slurs' },
+        { time: 3.2, label: 'Terminating buzzy notes (4.2 kHz)' }
       ],
       drawSpectrogram: (ctx, width, height) => {
         drawGrid(ctx, width, height);
 
-        // Strong introductory pulses
-        ctx.fillStyle = '#d65d30';
-        ctx.shadowBlur = 8;
+        ctx.strokeStyle = '#d65d30';
+        ctx.lineWidth = 6;
+        ctx.lineCap = 'round';
+        ctx.shadowBlur = 10;
         ctx.shadowColor = '#d65d30';
 
-        // Pulse 1
-        ctx.fillRect(width * 0.08, height * 0.55, width * 0.02, height * 0.2);
-        // Pulse 2
-        ctx.fillRect(width * 0.16, height * 0.58, width * 0.02, height * 0.2);
-        // Pulse 3
-        ctx.fillRect(width * 0.24, height * 0.52, width * 0.02, height * 0.2);
+        // Whistle 1 (Intro)
+        ctx.beginPath();
+        ctx.moveTo(width * 0.08, height * 0.6);
+        ctx.bezierCurveTo(width * 0.12, height * 0.52, width * 0.18, height * 0.52, width * 0.22, height * 0.6);
+        ctx.stroke();
 
-        // Trill block (dense, rapid vertical spikes)
+        // Whistle 2 (Intro)
+        ctx.beginPath();
+        ctx.moveTo(width * 0.25, height * 0.55);
+        ctx.bezierCurveTo(width * 0.28, height * 0.47, width * 0.32, height * 0.47, width * 0.35, height * 0.55);
+        ctx.stroke();
+
+        // Steep sweeps (slurs)
         ctx.strokeStyle = '#ff8f5a';
         ctx.shadowColor = '#ff8f5a';
-        ctx.lineWidth = 2;
-        
-        const trillStart = width * 0.38;
-        const trillEnd = width * 0.85;
-        for (let x = trillStart; x < trillEnd; x += 6) {
-          const randY = height * 0.2 + Math.random() * 20;
-          const randHeight = height * 0.3 + Math.sin(x * 0.05) * 15;
-          ctx.beginPath();
-          ctx.moveTo(x, randY);
-          ctx.lineTo(x, randY + randHeight);
-          ctx.stroke();
-        }
+        ctx.lineWidth = 4;
+
+        // Sweep 1
+        ctx.beginPath();
+        ctx.moveTo(width * 0.42, height * 0.35);
+        ctx.lineTo(width * 0.48, height * 0.7);
+        ctx.stroke();
+
+        // Sweep 2
+        ctx.beginPath();
+        ctx.moveTo(width * 0.52, height * 0.3);
+        ctx.lineTo(width * 0.58, height * 0.65);
+        ctx.stroke();
+
+        // Final buzz (thick, noisy horizontal bars)
+        ctx.strokeStyle = '#d65d30';
+        ctx.shadowColor = '#d65d30';
+        ctx.lineWidth = 12;
+        ctx.beginPath();
+        ctx.moveTo(width * 0.68, height * 0.5);
+        ctx.lineTo(width * 0.85, height * 0.5);
+        ctx.stroke();
+
+        // Add some high frequency harmonics on top of the buzz
+        ctx.strokeStyle = 'rgba(255, 143, 90, 0.4)';
+        ctx.shadowBlur = 0;
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(width * 0.68, height * 0.35);
+        ctx.lineTo(width * 0.85, height * 0.35);
+        ctx.stroke();
 
         ctx.shadowBlur = 0;
       }
     },
     {
       id: 'chickadee',
-      name: 'Black-capped Chickadee',
-      scientific: 'Poecile atricapillus',
-      audioUrl: './files/audio/chickadee.mp3',
+      name: 'Chestnut-backed Chickadee',
+      scientific: 'Poecile rufescens',
+      audioUrl: './files/audio/chickadee.wav',
       duration: 2.8,
-      description: 'A simple, pure-tone whistle consisting of a high-pitched whistle followed by a slightly lower-pitched whistle (the "fee-bee" song). The spectrogram shows two horizontal lines with very low noise, making it highly recognizable.',
+      description: 'A rapid, buzzy, and husky "chick-a-dee" call.',
       annotations: [
-        { time: 0.5, label: '"Fee" whistle at 4.0 kHz' },
-        { time: 1.4, label: 'Frequency gap (silence)' },
-        { time: 2.0, label: '"Bee" whistle at 3.3 kHz' }
+        { time: 0.4, label: '"Chick" raspy note (5.0 kHz)' },
+        { time: 1.2, label: '"A" transition sweep' },
+        { time: 2.0, label: '"Dee-dee-dee" rapid trill' }
       ],
       drawSpectrogram: (ctx, width, height) => {
         drawGrid(ctx, width, height);
 
-        // Pure whistles (flat neon lines)
-        ctx.lineWidth = 10;
-        ctx.lineCap = 'round';
-        ctx.shadowBlur = 16;
+        // "Chick" notes (thin vertical spikes)
+        ctx.strokeStyle = '#d65d30';
+        ctx.shadowBlur = 6;
+        ctx.shadowColor = '#d65d30';
+        ctx.lineWidth = 3;
 
-        // "Fee" note
+        const drawSpike = (x) => {
+          ctx.beginPath();
+          ctx.moveTo(x, height * 0.2);
+          ctx.lineTo(x, height * 0.7);
+          ctx.stroke();
+        };
+
+        drawSpike(width * 0.08);
+        drawSpike(width * 0.12);
+        drawSpike(width * 0.16);
+
+        // "A" transition sweep (short diagonal line)
         ctx.strokeStyle = '#ff8f5a';
         ctx.shadowColor = '#ff8f5a';
+        ctx.lineWidth = 4;
         ctx.beginPath();
-        ctx.moveTo(width * 0.1, height * 0.5);
-        ctx.lineTo(width * 0.45, height * 0.5);
+        ctx.moveTo(width * 0.3, height * 0.65);
+        ctx.lineTo(width * 0.42, height * 0.35);
         ctx.stroke();
 
-        // "Bee" note
-        ctx.strokeStyle = '#d65d30';
+        // "Dee-dee-dee" trill (horizontal blocks)
+        ctx.fillStyle = '#d65d30';
         ctx.shadowColor = '#d65d30';
-        ctx.beginPath();
-        ctx.moveTo(width * 0.55, height * 0.6);
-        ctx.lineTo(width * 0.9, height * 0.6);
-        ctx.stroke();
+        ctx.shadowBlur = 10;
+
+        const drawDee = (startX) => {
+          ctx.fillRect(startX, height * 0.4, width * 0.06, height * 0.1);
+          ctx.fillRect(startX, height * 0.55, width * 0.06, height * 0.1);
+        };
+
+        drawDee(width * 0.52);
+        drawDee(width * 0.62);
+        drawDee(width * 0.72);
+        drawDee(width * 0.82);
 
         ctx.shadowBlur = 0;
       }
@@ -138,9 +183,9 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'jay',
       name: "Steller's Jay",
       scientific: 'Cyanocitta stelleri',
-      audioUrl: './files/audio/jay.mp3',
+      audioUrl: './files/audio/jay.wav',
       duration: 2.5,
-      description: "A harsh, raspy scolding sound. The spectrogram exhibits vertical bands of wideband noise extending across a wide frequency range (1 kHz to 8 kHz) with prominent harmonics, typical of corvid calls.",
+      description: "A harsh, raspy scolding sound.",
       annotations: [
         { time: 0.4, label: 'Harsh wideband scold (1.5 - 7 kHz)' },
         { time: 1.2, label: 'Vertical harmonic scratch patterns' },
@@ -157,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
           for (let x = startX; x < endX; x += 4) {
             ctx.strokeStyle = Math.random() > 0.3 ? '#d65d30' : '#ff8f5a';
             ctx.lineWidth = 1.5 + Math.random() * 2;
-            
+
             // Draw multiple short fragments vertically to simulate noise
             for (let y = height * 0.15; y < height * 0.85; y += 15) {
               if (Math.random() > 0.25) {
@@ -181,9 +226,9 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'junco',
       name: 'Dark-eyed Junco',
       scientific: 'Junco hyemalis',
-      audioUrl: './files/audio/junco.mp3',
+      audioUrl: './files/audio/junco.wav',
       duration: 3.0,
-      description: 'A fast, ringing trill that lasts around 2 seconds. The spectrogram displays a rapid sequence of identical, closely-spaced vertical sweeps between 3.8 kHz and 5.8 kHz. The CNN excels at detecting this high-density texture.',
+      description: 'A fast, ringing trill that lasts around 2 seconds.',
       annotations: [
         { time: 0.3, label: 'Rapid trill onset' },
         { time: 1.5, label: 'Repetitive high-speed pulses (4.5 kHz)' },
@@ -309,12 +354,12 @@ document.addEventListener('DOMContentLoaded', () => {
       cancelAnimationFrame(animationId);
       animationId = null;
     }
-    
+
     activeBirdIndex = index;
     renderTabs();
     updateInfoPanel();
     renderActiveSpectrogram();
-    
+
     // Reset play/pause states
     playBtn.querySelector('span').textContent = 'Listen to Song';
     playIcon.style.display = 'inline';
@@ -371,7 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Position annotation card above playhead (centered)
         const visualizerWidth = document.getElementById('visualizer-box').offsetWidth;
         let leftPos = (activeAnnotation.time / duration) * visualizerWidth - 90;
-        
+
         // Boundaries checks
         if (leftPos < 10) leftPos = 10;
         if (leftPos > visualizerWidth - 190) leftPos = visualizerWidth - 190;
@@ -433,16 +478,16 @@ document.addEventListener('DOMContentLoaded', () => {
     playBtn.querySelector('span').textContent = 'Pause (Simulated)';
     playIcon.style.display = 'none';
     pauseIcon.style.display = 'inline';
-    
+
     simStartTime = Date.now();
     simDuration = birds[activeBirdIndex].duration * 1000;
-    
+
     function step() {
       if (!isSimulating) return;
-      
+
       const elapsed = Date.now() - simStartTime;
       const progress = elapsed / simDuration;
-      
+
       if (progress >= 1.0) {
         // Stop
         isSimulating = false;
@@ -454,7 +499,7 @@ document.addEventListener('DOMContentLoaded', () => {
         pauseIcon.style.display = 'none';
       } else {
         playhead.style.left = `${progress * 100}%`;
-        
+
         // Annotation logic
         const currentTime = (elapsed / 1000);
         const activeBird = birds[activeBirdIndex];
@@ -465,7 +510,7 @@ document.addEventListener('DOMContentLoaded', () => {
             break;
           }
         }
-        
+
         if (activeAnnotation) {
           annotationEl.textContent = activeAnnotation.label;
           const visualizerWidth = document.getElementById('visualizer-box').offsetWidth;
@@ -478,7 +523,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           annotationEl.classList.remove('active');
         }
-        
+
         requestAnimationFrame(step);
       }
     }

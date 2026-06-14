@@ -36,13 +36,14 @@
 
         <header class="article-header">
           <h1 class="article-title">CNN for Identifying Bird Calls</h1>
-          <p class="article-subtitle">Exploring Deep Learning Architectures and Input Formats for Bioacoustic Classification</p>
+          <p class="article-subtitle">Exploring Deep Learning Architectures and Input Formats for Bioacoustic
+            Classification</p>
           <div class="article-meta">CS 474 Final Project • June 14, 2026</div>
           <div class="pdf-link-container">
             <a href="./files/BirdNet.pdf" target="_blank" rel="noopener" class="pdf-link">Original PDF Report ↗</a>
           </div>
         </header>
-        
+
         <section>
           <h2>Problem</h2>
           <p>
@@ -59,7 +60,8 @@
           <h2>Exploratory Data Analysis</h2>
           <p>
             I used audio from a collection of fully-annotated soundscape recordings from the Western United
-            States published by Cornell Lab of Ornithology for the 2021 BirdCLEF bird call
+            States published <a href="https://zenodo.org/records/7050014#.Y7ijWexudhE" target="_blank">here</a> by
+            Cornell Lab of Ornithology for the 2021 BirdCLEF bird call
             identification competition. The dataset includes 33 hour-long soundscape recordings, which have
             been annotated with 20,147 bounding box labels for 56 different bird species.
           </p>
@@ -78,7 +80,7 @@
             <div class="explorer-header">
               <div class="explorer-title">Bioacoustics & Spectrogram Explorer</div>
             </div>
-            
+
             <div class="bird-tabs" id="bird-tabs">
               <!-- Dynamically populated -->
             </div>
@@ -92,14 +94,14 @@
                   <div class="spectrogram-label x-axis">Time (s)</div>
                   <div class="spectrogram-annotation" id="spectrogram-annotation"></div>
                 </div>
-                
+
                 <div class="player-controls">
                   <button class="play-btn" id="play-btn">
                     <svg viewBox="0 0 24 24" id="play-icon">
-                      <path d="M8 5v14l11-7z"/>
+                      <path d="M8 5v14l11-7z" />
                     </svg>
                     <svg viewBox="0 0 24 24" id="pause-icon" style="display: none;">
-                      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
                     </svg>
                     <span>Listen to Song</span>
                   </button>
@@ -164,8 +166,10 @@
           <p>
             The table below contains the parameter counts and test set scores for each of the models explained
             above. Also included at the bottom is the baseline accuracy (always choosing the majority class) and the
-            performance of both VGG-11 and YAMNet when given all of the prepared training samples (around 10,000 spectrograms).
-            While 75% is a modest accuracy, it is actually pretty impressive when you consider that around 25% of the audio
+            performance of both VGG-11 and YAMNet when given all of the prepared training samples (around 10,000
+            spectrograms).
+            While 75% is a modest accuracy, it is actually pretty impressive when you consider that around 25% of the
+            audio
             clips overlap. That means that multiple bird calls were present in the same spectrogram.
           </p>
 
@@ -255,28 +259,34 @@
 
           <h3>Input Representation</h3>
           <p>
-            I expected spectrograms to be more rich representations of the audio and thus perform better. This turned out to
+            I expected spectrograms to be more rich representations of the audio and thus perform better. This turned
+            out to
             be true, although I was surprised with how well Transformers were able to perform with just raw audio.
           </p>
 
           <h3>Model Size</h3>
           <p>
-            The largest model (VGG-11) did perform the best. However, smaller models like HuBERT were able to approach its
-            superior performance. Even smaller models like YAMNet were able to punch well above their weight with some clever
+            The largest model (VGG-11) did perform the best. However, smaller models like HuBERT were able to approach
+            its
+            superior performance. Even smaller models like YAMNet were able to punch well above their weight with some
+            clever
             architectural design.
           </p>
 
           <h3>Pretrained Weights</h3>
           <p>
-            Pretrained models certainly helped to boost accuracy. Finetuned models performed the best, and I would not have
+            Pretrained models certainly helped to boost accuracy. Finetuned models performed the best, and I would not
+            have
             been able to train models of that size to a good accuracy level given how little training data I had without
             pretraining.
           </p>
 
           <h3>Architecture</h3>
           <p>
-            As mentioned, YAMNet’s unique architecture seemed to have a positive impact. It achieved moderate results even
-            without pretraining. Its much larger 2D CNN counterpart VGG-11 achieved the high score. My larger 1D CNN started
+            As mentioned, YAMNet’s unique architecture seemed to have a positive impact. It achieved moderate results
+            even
+            without pretraining. Its much larger 2D CNN counterpart VGG-11 achieved the high score. My larger 1D CNN
+            started
             to overfit after a couple epochs. This was apparent due to the test accuracy taking a sharp dip as training
             progressed. It was probably overparameterized. Transformers far outperform 1D CNNs with raw audio.
           </p>
@@ -287,7 +297,8 @@
           <p>
             My comparison of models reveals that 2D CNNs with spectrograms remain state-of-the-art for bird song
             classification. Pretraining is powerful—even with seemingly unrelated tasks like image or human speech
-            recognition. An efficient architecture can save a lot of parameters without sacrificing too much performance.
+            recognition. An efficient architecture can save a lot of parameters without sacrificing too much
+            performance.
           </p>
         </section>
 
