@@ -25,22 +25,6 @@
   <style>
     /* Custom style overrides and components for Six Nimmt Game */
 
-    .blog-container {
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .post-body {
-      font-size: 1.15rem;
-      line-height: 1.75;
-      margin-bottom: 64px;
-    }
-
-    .post-body p {
-      margin-bottom: 1.5rem;
-    }
 
     .stats-table-container {
       margin: 32px 0;
@@ -77,8 +61,6 @@
 
     .game-section {
       background-color: var(--bg-color);
-      margin: 48px 0;
-      padding: 32px 0;
       position: relative;
     }
 
@@ -240,10 +222,6 @@
     }
 
     @media (max-width: 550px) {
-      .blog-container {
-        padding: 0 16px;
-      }
-
       .game-grid {
         gap: 16px;
       }
@@ -717,7 +695,7 @@
         <img src="./images/banners/bullheads.jpg" alt="Bullheads Banner">
       </div>
 
-      <article class="blog-container">
+      <article class="academic-article">
 
         <header class="article-header">
           <h1 class="article-title">Beating "6 nimmt!" with Monte Carlo Minimax Search</h1>
@@ -727,7 +705,7 @@
           </div>
         </header>
 
-        <section class="post-body">
+        <section>
           <p>
             The German card game <strong>6 nimmt!</strong> (also known as <em>Take 5!</em> or <em>Categories</em>)
             presents a fascinating challenge for artificial intelligence. With simple rules but highly chaotic
@@ -780,8 +758,8 @@
             consistently emerged as the dominant strategy. Below are the results compiled from the experimental logs:
           </p>
 
-          <div class="stats-table-container">
-            <table class="stats-table">
+          <div class="academic-table-container">
+            <table class="academic-table">
               <thead>
                 <tr>
                   <th>Agent</th>
@@ -847,8 +825,8 @@
             I also played against my best agent, Search AI, for 10 rounds to match my wits:
           </p>
 
-          <div class="stats-table-container" style="max-width: 500px; margin-inline: auto;">
-            <table class="stats-table">
+          <div class="academic-table-container" style="max-width: 600px; margin-inline: auto;">
+            <table class="academic-table">
               <thead>
                 <tr>
                   <th>Agent</th>
