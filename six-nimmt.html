@@ -191,17 +191,106 @@
       gap: 32px;
     }
 
-    @media (max-width: 850px) {
-      .game-grid {
-        grid-template-columns: 1fr;
-      }
+    .board-panel {
+      display: contents; /* Let children place themselves in grid */
     }
 
-    .board-panel,
     .info-panel {
       display: flex;
       flex-direction: column;
       gap: 24px;
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    /* Grid placements to make played cards and hand span full width on large screens */
+    .board-panel > .panel-card:nth-child(1) { /* Rows on Board */
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .played-cards-card { /* Revealed Played Cards */
+      grid-column: 1 / span 2;
+      grid-row: 2;
+    }
+
+    .hand-area-card { /* Player's Hand */
+      grid-column: 1 / span 2;
+      grid-row: 3;
+    }
+
+    @media (max-width: 950px) {
+      .game-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      .board-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      .info-panel {
+        grid-column: auto;
+        grid-row: auto;
+      }
+      .board-panel > .panel-card:nth-child(1) {
+        grid-column: auto;
+        grid-row: auto;
+      }
+      .played-cards-card,
+      .hand-area-card {
+        grid-column: auto;
+        grid-row: auto;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .game-grid {
+        gap: 16px;
+      }
+      .panel-card {
+        padding: 12px;
+      }
+      .game-row {
+        padding: 8px;
+        gap: 6px;
+      }
+      .row-cards {
+        gap: 4px;
+      }
+      .game-card {
+        padding: 4px;
+        border-width: 1px;
+      }
+      .card-corner {
+        font-size: 0.6rem;
+      }
+      .card-center-number {
+        font-size: 1.1rem;
+      }
+      .card-bull-icons {
+        font-size: 0.45rem;
+        bottom: 15%;
+      }
+      .played-cards-grid {
+        gap: 8px;
+      }
+      .played-cards-grid .game-card {
+        width: 60px;
+      }
+      .hand-cards-flex {
+        gap: 8px;
+      }
+      .hand-cards-flex .game-card {
+        width: 65px;
+      }
+      .empty-thought-msg,
+      .empty-hand-msg,
+      .empty-played-msg {
+        padding: 10px 0;
+        font-size: 0.8rem;
+      }
     }
 
     .panel-card {
@@ -429,10 +518,15 @@
 
     /* Played cards area layout */
     .played-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 16px;
+      justify-content: center;
       margin-top: 10px;
+    }
+
+    .played-cards-grid .game-card {
+      width: 80px;
     }
 
     .played-card-wrapper {
@@ -473,6 +567,10 @@
       gap: 10px;
       justify-content: center;
       margin-top: 16px;
+    }
+
+    .hand-cards-flex .game-card {
+      width: 90px;
     }
 
     /* Logs and thought containers */
@@ -838,7 +936,7 @@
                 </div>
               </div>
 
-              <div class="panel-card">
+              <div class="panel-card played-cards-card">
                 <div class="panel-card-title">Revealed Played Cards</div>
                 <div id="played-cards-container" class="played-cards-grid">
                   <!-- Dynamically rendered -->

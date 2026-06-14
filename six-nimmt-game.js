@@ -893,7 +893,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             setupModal.style.display = 'none';
-            gameArea.style.display = 'grid';
+            gameArea.style.display = '';
             
             const logContent = document.getElementById('game-log-content');
             if (logContent) logContent.innerHTML = '';
