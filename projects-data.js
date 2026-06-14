@@ -26,7 +26,7 @@ const projectsData = [
     "imageAlt": "Colorful wild songbird singing on a branch in a forest",
     "description": "Explored deep learning architectures (Transformers and CNNs) for bird song classification, achieving state-of-the-art accuracy with a fine-tuned VGG-11 model.",
     "tags": ["Deep Learning", "Audio"],
-    "link": "./files/BirdNet.pdf",
+    "link": "./bird-calls-cnn.html",
     "featured": true
   },
   {
