@@ -74,7 +74,7 @@ const projectsData = [
     "title": "Kikuyu Grammar Sketch",
     "image": "./images/thumbnails/kikuyu-fieldwork.webp",
     "imageAlt": "Vintage ink pen writing in fieldwork notebooks",
-    "description": "Documented the grammatical structures of Kikuyu with a native consultant.",
+    "description": "A wide-ranging description of the grammatical structures of Kikuyu constructed with the help of a native consultant.",
     "tags": ["Fieldwork", "IPA", "Morphosyntax"],
     "link": "./projects/kikuyu-fieldwork.html",
     "featured": true
